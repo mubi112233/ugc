@@ -126,12 +126,12 @@ export const Blog = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
-      <div className="absolute top-0 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gold/5 rounded-full blur-[100px] md:blur-[150px]" />
-      <div className="absolute bottom-0 right-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gold/5 rounded-full blur-[100px] md:blur-[150px]" />
+      <div className="absolute top-0 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-brand/10 rounded-full blur-[100px] md:blur-[150px]" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-brand/10 rounded-full blur-[100px] md:blur-[150px]" />
 
       <div className={`container mx-auto ${SPACING.container} relative z-10`}>
         <div className="mb-12 sm:mb-16 lg:mb-20 text-left max-w-5xl">
-          <span className="inline-block px-4 py-2 bg-gold text-foreground text-sm font-bold rounded-full mb-4 shadow-md">
+          <span className="inline-block px-4 py-2 bg-gradient-to-r from-brand to-gold text-foreground text-sm font-bold rounded-full mb-4 shadow-md">
             {copy.badge}
           </span>
           <h2
@@ -154,7 +154,7 @@ export const Blog = () => {
             >
               <Link
                 href={`/${currentLang}/blog/${slugify(post.title)}-${post.blogId || post.id}`}
-                className="group bg-card border border-border/50 rounded-xl sm:rounded-2xl overflow-hidden hover:border-gold/50 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-2 w-full block h-full"
+                className="group bg-card border border-border/50 rounded-xl sm:rounded-2xl overflow-hidden hover:border-brand/50 hover:shadow-[0_20px_60px_-15px_hsl(142_70%_45%/0.3)] transition-all duration-300 hover:-translate-y-2 w-full block h-full"
               >
                 {/* Image */}
                 <div className="relative h-44 sm:h-52 md:h-48 lg:h-56 overflow-hidden">
@@ -166,7 +166,7 @@ export const Blog = () => {
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-gold text-foreground text-xs font-bold rounded-full">
+                    <span className="px-3 py-1 bg-gradient-to-r from-brand to-gold text-foreground text-xs font-bold rounded-full">
                       {post.category}
                     </span>
                   </div>
@@ -186,7 +186,7 @@ export const Blog = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3 text-foreground group-hover:text-gold transition-colors line-clamp-2 flex-grow">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3 text-foreground group-hover:text-brand transition-colors line-clamp-2 flex-grow">
                     {post.title}
                   </h3>
 
@@ -198,7 +198,7 @@ export const Blog = () => {
                     <span className="text-xs sm:text-sm text-muted-foreground truncate">
                       {copy.by} {post.author}
                     </span>
-                    <div className="flex items-center gap-1 sm:gap-2 text-gold font-semibold text-xs sm:text-sm group-hover:gap-2 sm:group-hover:gap-3 transition-all flex-shrink-0">
+                    <div className="flex items-center gap-1 sm:gap-2 text-brand font-semibold text-xs sm:text-sm group-hover:gap-2 sm:group-hover:gap-3 transition-all flex-shrink-0">
                       <span className="hidden sm:inline">{copy.readMore}</span>
                       <span className="sm:hidden">{copy.read}</span>
                       <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />

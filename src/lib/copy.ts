@@ -8,29 +8,29 @@ export const copy = {
   en: {
     // How It Works
     howItWorks: {
-      badge: "How It Works",
-      heading: "Get started in <span class=\"text-gold\">4 simple steps</span>",
-      description: "From onboarding to measurable results — our process is designed to be fast, clear, and efficient.",
+      badge: "Our UGC Process",
+      heading: "How We <span class=\"text-gold\">Create UGC</span>",
+      description: "From brief to final video in 5–7 days. Data-driven hooks, authentic creators, and platform-optimized editing.",
       steps: {
         step1: {
           step: "Step 1",
-          title: "Initial Consultation",
-          description: "We discuss your needs and goals to create a customized plan for your virtual assistant."
+          title: "Brief & Strategy",
+          description: "Share your product, target audience, and campaign goals. We develop hooks, scripts, and creator personas tailored to your brand."
         },
         step2: {
           step: "Step 2", 
-          title: "VA Matching & Onboarding",
-          description: "We match you with the perfect virtual assistant and handle all onboarding processes."
+          title: "Casting & Production",
+          description: "We cast authentic creators, coordinate filming, and direct on-brand UGC. Professional lighting, sound, and editing standards."
         },
         step3: {
           step: "Step 3",
-          title: "Integration & Training",
-          description: "Your VA integrates with your team and receives specific training on your workflows."
+          title: "Edit & Deliver",
+          description: "Fast-turnaround editing optimized for TikTok, Reels, and Shorts. Multiple formats, captions, and usage rights included."
         },
         step4: {
           step: "Step 4",
-          title: "Ongoing Support & Growth",
-          description: "Continuous quality control and support to ensure optimal performance and scaling."
+          title: "Test & Iterate",
+          description: "Track performance metrics, A/B test hooks, and refine creative strategy. Continuous optimization for maximum ROI."
         }
       }
     },
@@ -44,12 +44,12 @@ export const copy = {
 
     // Testimonials
     testimonials: {
-      heading: "Trusted by <span class=\"text-gold\">Growing Businesses</span>",
-      subheading: "Real results from real companies scaling with DON VA.",
+      heading: "Trusted by <span class=\"text-gold\">Growing Brands</span>",
+      subheading: "Short-form UGC that performs across TikTok, Reels, and Shorts.",
       caseStudy: {
         badge: "Success Story",
-        title: "Case Study: <span class=\"text-gold\">70% Cost Reduction</span>",
-        description: "See how a mid-sized e-commerce company reduced their operational costs by €42,000 annually while improving service quality.",
+        title: "Case Study: <span class=\"text-gold\">UGC that Scaled</span>",
+        description: "See how performance-driven UGC hooks and variations increased conversions and reduced creative fatigue.",
         cta: "View Full Case Study",
       },
     },
@@ -57,8 +57,8 @@ export const copy = {
     // Blog
     blog: {
       badge: "Insights",
-      heading: "Latest <span class=\"text-gold\">Insights</span>",
-      description: "Practical guides and strategies for scaling with virtual assistants.",
+      heading: "Latest <span class=\"text-gold\">UGC Insights</span>",
+      description: "Practical playbooks for hooks, creators, and short-form creative that converts.",
       by: "By",
       readMore: "Read more",
       read: "Read",
@@ -67,8 +67,8 @@ export const copy = {
     // Case Studies
     caseStudies: {
       badge: "Success Stories",
-      heading: "Real <span class=\"text-gold\">Success Stories</span>",
-      description: "Proven results from teams scaling with DON VA.",
+      heading: "Real <span class=\"text-gold\">UGC Results</span>",
+      description: "Examples of creative testing, iteration, and scalable UGC production.",
       labels: {
         saved: "Saved",
         teamSize: "Team Size",
@@ -82,11 +82,11 @@ export const copy = {
     faq: {
       badge: "FAQ",
       title: "Frequently Asked Questions",
-      description: "Answers to the most common questions about our service, quality control, and security.",
-      qualityCardTitle: "Native Quality Control",
-      qualityCardText: "Dedicated supervisors review outputs and coach continuously to maintain standards.",
-      toolsCardTitle: "Works with Your Tools",
-      toolsCardText: "We plug into your existing workflows and platforms without disrupting your operations.",
+      description: "Answers to the most common questions about UGC production, turnaround, testing, and usage rights.",
+      qualityCardTitle: "On-brand creators",
+      qualityCardText: "We cast creators that match your niche, demographics, and tone of voice.",
+      toolsCardTitle: "Optimized for platforms",
+      toolsCardText: "Scripts, hooks, edits, and cuts are tailored for TikTok, Reels, and Shorts.",
       stillHaveQuestionsTitle: "Still have questions?",
       stillHaveQuestionsText: "We're here to help you choose the right setup for your needs.",
       contactSupport: "Contact Support",
@@ -96,17 +96,17 @@ export const copy = {
     // Pricing
     pricing: {
       sectionBadge: "Pricing",
-      sectionTitle: "Simple, transparent pricing",
-      sectionDescription: "Choose a plan and number of VAs that fits your needs. Scale up or down anytime.",
-      vaCountLabel: "How many VAs do you need?",
-      vaCountHelper: "Select the number of virtual assistants",
-      startingFrom: "Starting from €{price}/mo · ~€{hourly}/hr",
+      sectionTitle: "UGC Content Packages",
+      sectionDescription: "Production-ready UGC at scale. All packages include scripting, creator casting, filming, editing, captions, and commercial usage rights.",
+      vaCountLabel: "How many videos do you need?",
+      vaCountHelper: "Select the number of UGC videos",
+      startingFrom: "Starting from €{price}/mo",
       bulkDiscount: "{percent}% bulk discount applied!",
       bulkSavings: "You save €{amount} total",
       bulkHint: "Add {count} more VA{suffix} to unlock {percent}% bulk discount",
       bannerBadge: "Limited Time",
-      bannerTitle: "Book a Free Meeting",
-      bannerSubtitle: "Schedule your free consultation and get started today",
+      bannerTitle: "Free UGC Strategy Call",
+      bannerSubtitle: "Get expert advice on UGC strategy, creator casting, and platform optimization before choosing a package.",
       bannerPoints: {
         noCommitment: "No commitment",
         cancelAnytime: "Cancel anytime",
@@ -158,9 +158,9 @@ export const copy = {
 
     // Final CTA
     finalCTA: {
-      badge: "Ready to Scale?",
-      title: "Start with <span class=\"text-gold\">DON VA</span> Today",
-      description: "Book a free consultation and see how we can transform your operations in 48 hours.",
+      badge: "Ready to scale?",
+      title: "Get <span class=\"text-gold\">UGC</span> that converts",
+      description: "Book a free strategy call and get hook ideas + a content plan tailored to your product.",
     },
 
     // Value Proposition (if used)

@@ -12,7 +12,7 @@ const getApiBase = () =>
 
 const getTenantId = () =>
   process.env.NEXT_PUBLIC_TENANT_ID ||
-  'socal_media_agency';
+  'ugc';
 
 /**
  * Creates fetch options with proper headers including X-Tenant-ID

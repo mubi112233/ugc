@@ -46,7 +46,7 @@ export function HowItWorks({ lang }: { lang?: string } = {}) {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="inline-block px-4 py-2 bg-foreground text-gold text-sm font-semibold rounded-full mb-4">
+          <span className="inline-block px-4 py-2 bg-gradient-to-r from-brand/20 to-gold/20 border border-brand/30 text-brand text-sm font-semibold rounded-full mb-4">
             {copy.badge}
           </span>
           <h2
@@ -74,27 +74,27 @@ export function HowItWorks({ lang }: { lang?: string } = {}) {
                 }`}
               >
                 <motion.div
-                  className="flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gold via-primary to-gold flex items-center justify-center shadow-[0_20px_60px_-15px_hsl(220_100%_50%/0.6)] relative group"
+                  className="flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-brand via-gold to-secondary flex items-center justify-center shadow-[0_20px_60px_-15px_hsl(142_70%_45%/0.6)] relative group"
                   whileHover={prefersReducedMotion ? undefined : { scale: 1.1, rotate: 360 }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
                 >
-                  <div className="absolute inset-0 rounded-full bg-gold/20 blur-xl group-hover:blur-2xl transition-all duration-500" />
+                  <div className="absolute inset-0 rounded-full bg-brand/20 blur-xl group-hover:blur-2xl transition-all duration-500" />
                   <step.icon className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-black relative z-10" />
-                  <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-7 h-7 sm:w-8 sm:h-8 bg-foreground text-gold rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">
+                  <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-7 h-7 sm:w-8 sm:h-8 bg-foreground text-brand rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">
                     {index + 1}
                   </div>
                 </motion.div>
 
                 <motion.div
-                  className={`relative flex-1 bg-card rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 hover:shadow-[0_20px_60px_-15px_hsl(220_100%_50%/0.25)] transition-all duration-500 group overflow-hidden ${
+                  className={`relative flex-1 bg-card rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 hover:shadow-[0_20px_60px_-15px_hsl(142_70%_45%/0.25)] transition-all duration-500 group overflow-hidden ${
                     index % 2 === 1 ? "md:text-right" : ""
                   }`}
                   whileHover={prefersReducedMotion ? undefined : { y: -8, scale: 1.02 }}
                 >
-                  <p className="text-gold font-bold text-sm uppercase tracking-wider mb-3 inline-block px-3 py-1 bg-gold/10 rounded-full">
+                  <p className="text-brand font-bold text-sm uppercase tracking-wider mb-3 inline-block px-3 py-1 bg-brand/10 rounded-full">
                     {copy.steps[step.key].step}
                   </p>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-foreground group-hover:text-gold transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-foreground group-hover:text-brand transition-colors duration-300">
                     {copy.steps[step.key].title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed text-sm sm:text-base md:text-lg">

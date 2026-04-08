@@ -19,8 +19,8 @@ export function FAQInteractive({ faqs, lang }: { faqs: FAQItem[]; lang: string }
       id="faq"
       className="relative py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-b from-background via-muted/30 to-background z-80 overflow-hidden"
     >
-      <div className="absolute top-20 right-10 w-64 h-64 bg-gold/5 rounded-full blur-[100px]" />
-      <div className="absolute bottom-20 left-10 w-64 h-64 bg-gold/5 rounded-full blur-[100px]" />
+      <div className="absolute top-20 right-10 w-64 h-64 bg-brand/10 rounded-full blur-[100px]" />
+      <div className="absolute bottom-20 left-10 w-64 h-64 bg-brand/10 rounded-full blur-[100px]" />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -38,7 +38,7 @@ export function FAQInteractive({ faqs, lang }: { faqs: FAQItem[]; lang: string }
               viewport={{ once: true }}
               transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
             >
-              <div className="px-4 py-2 bg-gold/10 backdrop-blur-sm rounded-full text-sm font-semibold text-gold flex items-center gap-2 border border-gold/20">
+              <div className="px-4 py-2 bg-brand/10 backdrop-blur-sm rounded-full text-sm font-semibold text-brand flex items-center gap-2 border border-brand/20">
                 <HelpCircle className="w-4 h-4" />
                 <span>{copy.badge}</span>
               </div>
@@ -71,11 +71,11 @@ export function FAQInteractive({ faqs, lang }: { faqs: FAQItem[]; lang: string }
                 >
                   <AccordionItem
                     value={`item-${index}`}
-                    className="group bg-card/50 backdrop-blur-sm border-2 border-border/50 rounded-xl sm:rounded-2xl px-4 sm:px-6 md:px-8 hover:border-gold hover:bg-card hover:shadow-lg transition-all duration-300 data-[state=open]:border-gold data-[state=open]:bg-card data-[state=open]:shadow-xl"
+                    className="group bg-card/50 backdrop-blur-sm border-2 border-border/50 rounded-xl sm:rounded-2xl px-4 sm:px-6 md:px-8 hover:border-brand hover:bg-card hover:shadow-lg transition-all duration-300 data-[state=open]:border-brand data-[state=open]:bg-card data-[state=open]:shadow-xl"
                   >
-                    <AccordionTrigger className="text-left text-base sm:text-lg md:text-xl font-semibold hover:text-gold py-5 sm:py-6 hover:no-underline group-hover:text-gold transition-colors">
+                    <AccordionTrigger className="text-left text-base sm:text-lg md:text-xl font-semibold hover:text-brand py-5 sm:py-6 hover:no-underline group-hover:text-brand transition-colors">
                       <span className="flex items-start gap-3">
-                        <span className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gold/10 flex items-center justify-center text-gold text-sm font-bold mt-0.5">
+                        <span className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-brand/10 flex items-center justify-center text-brand text-sm font-bold mt-0.5">
                           {index + 1}
                         </span>
                         <span className="flex-1">{faq.question}</span>
@@ -97,10 +97,10 @@ export function FAQInteractive({ faqs, lang }: { faqs: FAQItem[]; lang: string }
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
-            <div className="p-5 sm:p-6 bg-gradient-to-br from-gold/10 via-gold/5 to-transparent backdrop-blur-sm border-2 border-gold/20 rounded-xl sm:rounded-2xl group hover:border-gold/40 transition-all duration-300">
+            <div className="p-5 sm:p-6 bg-gradient-to-br from-brand/10 via-gold/5 to-transparent backdrop-blur-sm border-2 border-brand/20 rounded-xl sm:rounded-2xl group hover:border-brand/40 transition-all duration-300">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 p-3 bg-gold/20 rounded-xl group-hover:bg-gold/30 transition-colors">
-                  <Shield className="w-6 h-6 text-gold" />
+                <div className="flex-shrink-0 p-3 bg-brand/20 rounded-xl group-hover:bg-brand/30 transition-colors">
+                  <Shield className="w-6 h-6 text-brand" />
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-foreground mb-1.5">
@@ -111,10 +111,10 @@ export function FAQInteractive({ faqs, lang }: { faqs: FAQItem[]; lang: string }
               </div>
             </div>
 
-            <div className="p-5 sm:p-6 bg-gradient-to-br from-gold/10 via-gold/5 to-transparent backdrop-blur-sm border-2 border-gold/20 rounded-xl sm:rounded-2xl group hover:border-gold/40 transition-all duration-300">
+            <div className="p-5 sm:p-6 bg-gradient-to-br from-brand/10 via-gold/5 to-transparent backdrop-blur-sm border-2 border-brand/20 rounded-xl sm:rounded-2xl group hover:border-brand/40 transition-all duration-300">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 p-3 bg-gold/20 rounded-xl group-hover:bg-gold/30 transition-colors">
-                  <Zap className="w-6 h-6 text-gold" />
+                <div className="flex-shrink-0 p-3 bg-brand/20 rounded-xl group-hover:bg-brand/30 transition-colors">
+                  <Zap className="w-6 h-6 text-brand" />
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-foreground mb-1.5">
@@ -142,13 +142,13 @@ export function FAQInteractive({ faqs, lang }: { faqs: FAQItem[]; lang: string }
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-gold text-foreground font-semibold rounded-xl hover:bg-gold/90 transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-brand to-gold text-foreground font-semibold rounded-xl hover:from-gold hover:to-secondary transition-all duration-300 hover:scale-105"
               >
                 {copy.contactSupport}
               </a>
               <a
                 href="#pricing"
-                className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-border text-foreground font-semibold rounded-xl hover:border-gold hover:bg-gold/5 transition-all duration-300"
+                className="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-border text-foreground font-semibold rounded-xl hover:border-brand hover:bg-brand/5 transition-all duration-300"
               >
                 {copy.viewPricing}
               </a>

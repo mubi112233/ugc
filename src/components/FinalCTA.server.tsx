@@ -123,7 +123,7 @@ export async function FinalCTA({ lang }: { lang: string }) {
   ];
 
   return (
-    <section className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-gradient-to-br from-gold via-primary to-gold">
+    <section className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-gradient-to-br from-gold via-brand to-secondary">
       <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute inset-0 opacity-10"
@@ -150,7 +150,7 @@ export async function FinalCTA({ lang }: { lang: string }) {
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 sm:mb-8 text-white leading-[1.1]">
             <span className="block drop-shadow-lg">{c.headlineLine1}</span>
             <span className="relative inline-block mt-2">
-              <span className="relative z-10 bg-gradient-to-r from-white via-amber-50 to-white bg-clip-text text-transparent drop-shadow-2xl">
+              <span className="relative z-10 bg-gradient-to-r from-white via-brand/25 to-white bg-clip-text text-transparent drop-shadow-2xl">
                 {c.headlineLine2}
               </span>
             </span>

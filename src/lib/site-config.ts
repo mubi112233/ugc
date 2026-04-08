@@ -17,11 +17,11 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  brandName: "SEO Pro",
-  brandMarkText: "S",
+  brandName: "UGC Studio",
+  brandMarkText: "U",
   defaultLocale: "en",
   apiBase: process.env.NEXT_PUBLIC_API_BASE || "https://api.don-va.com",
-  tenantId: process.env.NEXT_PUBLIC_TENANT_ID || "socal_media_agency",
+  tenantId: process.env.NEXT_PUBLIC_TENANT_ID || "ugc",
   routes: {
     bookMeeting: "/book-meeting",
     contact: "/contact",

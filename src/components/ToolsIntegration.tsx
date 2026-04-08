@@ -54,6 +54,8 @@ export const ToolsIntegration = () => {
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
     >
+      <div className="absolute top-0 right-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-brand/10 rounded-full blur-[100px] md:blur-[150px]" />
+      <div className="absolute bottom-0 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gold/10 rounded-full blur-[100px] md:blur-[150px]" />
       <div className={`container mx-auto ${SPACING.container}`}>
         {/* Header */}
         <motion.div
@@ -65,9 +67,9 @@ export const ToolsIntegration = () => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
             {isGe ? (
-              <>Funktioniert mit Ihren <span className="text-gold">vorhandenen Tools</span></>
+              <>Funktioniert mit Ihren <span className="text-brand">vorhandenen Tools</span></>
             ) : (
-              <>Works With Your <span className="text-gold">Existing Tools</span></>
+              <>Works With Your <span className="text-brand">Existing Tools</span></>
             )}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl">
@@ -89,13 +91,13 @@ export const ToolsIntegration = () => {
             {tools.map((tool, index) => (
               <motion.div
                 key={tool.name}
-                className="bg-card border-2 border-border rounded-lg p-3 sm:p-4 text-center hover:border-gold hover:shadow-lg hover:shadow-gold/10 transition-all duration-300 group"
+                className="bg-card border-2 border-border rounded-lg p-3 sm:p-4 text-center hover:border-brand hover:shadow-lg hover:shadow-brand/15 transition-all duration-300 group"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.04, ease: "easeOut" }}
               >
-                <p className="text-sm sm:text-base font-semibold text-foreground group-hover:text-gold transition-colors">
+                <p className="text-sm sm:text-base font-semibold text-foreground group-hover:text-brand transition-colors">
                   {tool.name}
                 </p>
                 <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">
@@ -114,7 +116,7 @@ export const ToolsIntegration = () => {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
             <p className="text-base sm:text-lg text-foreground mb-3 sm:mb-4">
-              <span className="font-bold text-gold">
+              <span className="font-bold text-brand">
                 {isGe ? "Benötigen Sie ein bestimmtes Tool?" : "Need a specific tool?"}
               </span>{" "}
               {isGe ? "Einfach fragen." : "Just ask."}

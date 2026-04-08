@@ -33,27 +33,30 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   verification: {
-    google: "l93HxOLqUBDjtuNfHM7OsWQd7i9MfSJo1fV_yaLAZrE",
+    google: "zTMUXhxUzHgubS_eqXsgD0A9vKA6zgIK-9SIJyr0VT8",
   },
   title: {
-    default: "DON VA - Premium Virtual Assistants | Save 70% on Operations",
-    template: "%s | DON VA",
+    default: "UGC Studio | High-Converting User Generated Content for TikTok, Reels, Shorts",
+    template: "%s | UGC Studio",
   },
   description:
-    "Hire pre-vetted, German-speaking virtual assistants for 80% less than local hires. Scale your team in days, not months.",
+    "Creators who convert. We script, shoot, and edit UGC videos that make your product the star-optimized for TikTok, Reels, and Shorts. Fast turnaround, usage rights included.",
   keywords: [
-    "virtual assistant",
-    "VA services",
-    "German speaking VA",
-    "remote assistant",
-    "business scaling",
-    "DON VA",
-    "virtuelle assistenz",
-    "deutschsprachiger VA",
+    "UGC",
+    "user generated content",
+    "TikTok videos",
+    "Instagram Reels",
+    "YouTube Shorts",
+    "video marketing",
+    "content creation",
+    "social media marketing",
+    "video production",
+    "brand content",
+    "UGC Studio",
   ],
-  authors: [{ name: "DON VA", url: SITE_URL }],
-  creator: "DON VA",
-  publisher: "DON VA",
+  authors: [{ name: "UGC Studio", url: SITE_URL }],
+  creator: "UGC Studio",
+  publisher: "UGC Studio",
   formatDetection: {
     email: false,
     address: false,
@@ -72,20 +75,20 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "DON VA",
-    title: "DON VA - Premium Virtual Assistants | Save 70% on Operations",
+    siteName: "UGC Studio",
+    title: "UGC Studio | High-Converting User Generated Content",
     description:
-      "Hire pre-vetted, German-speaking virtual assistants for 80% less than local hires.",
+      "On-brand short-form videos for TikTok, Reels, and Shorts. Script + shoot + edit + usage rights. Fast turnaround, proven results.",
     url: absoluteUrl("/en"),
     locale: "en_US",
     alternateLocale: ["de_DE"],
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "DON VA — Virtual assistant services" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "UGC Studio - High-Converting User Generated Content" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DON VA - Premium Virtual Assistants | Save 70% on Operations",
+    title: "UGC Studio | High-Converting User Generated Content",
     description:
-      "Hire pre-vetted, German-speaking virtual assistants for 80% less than local hires.",
+      "On-brand short-form videos for TikTok, Reels, and Shorts. Script + shoot + edit + usage rights.",
     images: [absoluteUrl("/og-image.jpg")],
   },
   alternates: {
@@ -101,32 +104,37 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "DON VA",
+  name: "UGC Studio",
   url: SITE_URL,
   logo: absoluteUrl("/favicon.ico"),
   description:
-    "Pre-vetted, German-speaking virtual assistants for growing businesses in the DACH region and worldwide.",
+    "Creators who convert. We script, shoot, and edit UGC videos that make your product the star-optimized for TikTok, Reels, and Shorts.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
     availableLanguage: ["English", "German"],
   },
   areaServed: [
+    { "@type": "Country", name: "United States" },
     { "@type": "Country", name: "Germany" },
-    { "@type": "Country", name: "Austria" },
-    { "@type": "Country", name: "Switzerland" },
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Country", name: "Canada" },
     { "@type": "Place", name: "Worldwide" },
   ],
-  sameAs: ["https://linkedin.com/company/don-va", "https://twitter.com/don_va"],
+  sameAs: [
+    "https://twitter.com/ugcstudio",
+    "https://instagram.com/ugcstudio",
+    "https://linkedin.com/company/ugc-studio"
+  ],
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "DON VA",
+  name: "UGC Studio",
   url: SITE_URL,
   inLanguage: ["en-US", "de-DE"],
-  publisher: { "@type": "Organization", name: "DON VA" },
+  publisher: { "@type": "Organization", name: "UGC Studio" },
 };
 
 export default async function RootLayout({
@@ -162,11 +170,11 @@ export default async function RootLayout({
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
-        <DesignSystemProvider defaultTheme="blue">
+        <DesignSystemProvider defaultTheme="ugc">
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="light"
+            enableSystem={true}
             disableTransitionOnChange
           >
             {children}

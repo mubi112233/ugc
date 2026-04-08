@@ -215,7 +215,7 @@ export const HowItWorksDynamic = () => {
               >
                 <div className={`flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                   <motion.div 
-                    className="flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gold via-primary to-gold flex items-center justify-center shadow-[0_20px_60px_-15px_hsl(220_100%_50%/0.6)] relative group"
+                    className="flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-brand via-gold to-secondary flex items-center justify-center shadow-[0_20px_60px_-15px_hsl(142_70%_45%/0.6)] relative group"
                     whileHover={{ scale: 1.1, rotate: 360 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
                   >

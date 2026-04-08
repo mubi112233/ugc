@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { colorSchemes, getCSSVariables, DesignTokens } from '@/lib/design-system';
 
-type ThemeScheme = 'gold' | 'blue' | 'green' | 'purple' | 'red';
+type ThemeScheme = 'gold' | 'blue' | 'green' | 'purple' | 'red' | 'ugc';
 
 interface DesignSystemContextType {
   theme: ThemeScheme;
@@ -84,6 +84,7 @@ export const ThemeSwitcher = () => {
     { value: 'green', label: 'Green', color: 'bg-green-500' },
     { value: 'purple', label: 'Purple', color: 'bg-purple-500' },
     { value: 'red', label: 'Red', color: 'bg-red-500' },
+    { value: 'ugc', label: 'UGC', color: 'bg-gradient-to-r from-yellow-400 to-green-500' },
   ];
 
   return (

@@ -490,7 +490,7 @@ export default function ContactClient({ lang }: { lang: string }) {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto px-10 py-3 bg-gold hover:bg-yellow-500 text-black font-bold rounded-xl shadow-lg shadow-gold/25 hover:shadow-gold/40 hover:scale-[1.02] active:scale-[0.99] transition-all duration-200 text-base"
+                    className="w-full sm:w-auto px-10 py-3 bg-gradient-to-r from-brand to-gold hover:from-gold hover:to-secondary text-black font-bold rounded-xl shadow-lg shadow-gold/25 hover:shadow-gold/40 hover:scale-[1.02] active:scale-[0.99] transition-all duration-200 text-base"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">

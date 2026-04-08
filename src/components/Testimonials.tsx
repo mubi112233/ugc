@@ -99,6 +99,8 @@ export const Testimonials = () => {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
+      <div className="absolute top-0 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-brand/10 rounded-full blur-[100px] md:blur-[150px]" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gold/10 rounded-full blur-[100px] md:blur-[150px]" />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-4">
         <motion.div 
           className="mb-8 sm:mb-10 md:mb-12 lg:mb-16 text-left"
@@ -120,7 +122,7 @@ export const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={testimonial._id || index}
-              className="bg-card/50 backdrop-blur-sm border border-border rounded-lg sm:rounded-xl p-5 sm:p-6 md:p-8 hover:bg-card transition-all duration-300"
+              className="bg-card/50 backdrop-blur-sm border border-border rounded-lg sm:rounded-xl p-5 sm:p-6 md:p-8 hover:bg-card hover:border-brand/50 hover:shadow-[0_20px_60px_-15px_hsl(142_70%_45%/0.25)] transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -138,7 +140,7 @@ export const Testimonials = () => {
               
               <div className="border-t border-border pt-3 sm:pt-4">
                 <p className="text-sm sm:text-base font-bold text-foreground">{testimonial.name}</p>
-                <p className="text-xs sm:text-sm text-gold">{testimonial.role}</p>
+                <p className="text-xs sm:text-sm text-brand">{testimonial.role}</p>
                 <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.company}</p>
               </div>
             </motion.div>
@@ -146,26 +148,36 @@ export const Testimonials = () => {
         </div>
 
         <motion.div 
-          className="bg-card border border-gold/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 max-w-5xl mx-auto hover:border-gold/50 transition-all duration-300"
+          className="max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
         >
-          <div className="text-left">
-            <span className="inline-block px-3 py-1 bg-gold/10 text-gold text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
-              {copy.caseStudy?.badge}
-            </span>
-            <h3 
-              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4"
-              dangerouslySetInnerHTML={{ __html: copy.caseStudy?.title }}
-            />
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-5 sm:mb-6 leading-relaxed max-w-3xl">
-              {copy.caseStudy?.description}
-            </p>
-            <Button variant="gold" size="lg" className="w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
-              {copy.caseStudy?.cta}
-            </Button>
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-gold via-brand to-secondary p-[2px] shadow-xl">
+            <div className="bg-card rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <div className="text-left">
+                  <span className="inline-block px-3 py-1 bg-brand/10 text-brand text-xs sm:text-sm font-semibold rounded-full mb-3 sm:mb-4">
+                    {copy.caseStudy?.badge}
+                  </span>
+                  <h3
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4"
+                    dangerouslySetInnerHTML={{ __html: copy.caseStudy?.title }}
+                  />
+                  <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+                    {copy.caseStudy?.description}
+                  </p>
+                </div>
+                <Button
+                  variant="gold"
+                  size="lg"
+                  className="w-full lg:w-auto text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 bg-gold text-black hover:bg-gold/90 shadow-lg"
+                >
+                  {copy.caseStudy?.cta}
+                </Button>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

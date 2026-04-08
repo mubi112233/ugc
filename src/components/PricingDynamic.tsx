@@ -193,7 +193,7 @@ export const PricingDynamic = ({ lang }: { lang: string }) => {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <motion.div
-            className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gold via-primary to-gold p-1 max-w-sm mx-auto md:max-w-none shadow-xl"
+            className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gold via-brand to-secondary p-1 max-w-sm mx-auto md:max-w-none shadow-xl"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
@@ -417,7 +417,7 @@ export const PricingDynamic = ({ lang }: { lang: string }) => {
                 {/* Animated gradient border for highlighted plan */}
                 {plan.highlighted && (
                   <motion.div
-                    className="absolute -inset-0.5 bg-gradient-to-r from-gold via-primary to-gold rounded-2xl"
+                    className="absolute -inset-0.5 bg-gradient-to-r from-gold via-brand to-secondary rounded-2xl"
                     animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                     style={{ backgroundSize: "200% 200%" }}
@@ -426,7 +426,7 @@ export const PricingDynamic = ({ lang }: { lang: string }) => {
 
                 <div className={`relative rounded-2xl p-6 sm:p-8 md:p-10 transition-all duration-500 group h-full ${
                   plan.highlighted
-                    ? 'bg-gradient-to-br from-gold/95 via-gold/98 to-amber-500 text-foreground shadow-[0_25px_70px_-15px_hsl(45_75%_52%/0.5)]'
+                    ? 'bg-gradient-to-br from-gold/90 via-brand/90 to-secondary/90 text-foreground shadow-[0_25px_70px_-15px_hsl(142_70%_45%/0.45)]'
                     : 'bg-card border-2 border-border/60 hover:border-gold/80 hover:shadow-[0_25px_70px_-15px_hsl(45_75%_52%/0.4)]'
                 }`}>
 

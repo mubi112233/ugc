@@ -127,7 +127,7 @@ export const Pricing = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <motion.div 
-            className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gold via-yellow-400 to-amber-500 p-1 max-w-sm mx-auto md:max-w-none shadow-xl"
+            className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gold via-brand to-secondary p-1 max-w-sm mx-auto md:max-w-none shadow-xl"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
@@ -381,8 +381,8 @@ export const Pricing = () => {
               
               <div className={`relative rounded-2xl p-6 sm:p-8 md:p-10 transition-all duration-500 group h-full ${
                 plan.highlighted 
-                  ? 'bg-gradient-to-br from-primary/95 via-primary/98 to-primary text-foreground shadow-[0_25px_70px_-15px_hsl(220_100%_50%/0.5)]' 
-                  : 'bg-card border-2 border-border/60 hover:border-primary/80 hover:shadow-[0_25px_70px_-15px_hsl(220_100%_50%/0.4)]'
+                  ? 'bg-gradient-to-br from-gold/90 via-brand/90 to-secondary/90 text-foreground shadow-[0_25px_70px_-15px_hsl(142_70%_45%/0.45)]' 
+                  : 'bg-card border-2 border-border/60 hover:border-brand/80 hover:shadow-[0_25px_70px_-15px_hsl(142_70%_45%/0.35)]'
               }`}>
                 {/* Top accent line with animation */}
                 <motion.div 

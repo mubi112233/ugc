@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import {
   ArrowRight,
   Calendar,
@@ -48,27 +48,27 @@ export const Hero = () => {
 
   const isGe = currentLang === "ge";
 
-  const fallbackData: HeroData = isGe
+  const fallbackData: HeroData = useMemo(() => isGe
     ? {
-        title: "Skalieren Sie Ihr Unternehmen mit dedizierten virtuellen Assistenten",
+        title: "UGC, das konvertiert",
         subtitle:
-          "Stellen Sie geprüfte, deutschsprachige virtuelle Assistenten für 80% weniger als lokale Einstellungen ein. Skalieren Sie Ihr Team in Tagen, nicht Monaten.",
-        tagline: "Von 200+ wachsenden Unternehmen vertraut",
+          "Wir skripten, casten, drehen und schneiden UGC, das Ihr Produkt zum Star macht-optimiert für TikTok, Reels und Shorts. Schnelle Lieferung, datenbasierte Hooks, Nutzungsrechte inklusive.",
+        tagline: "High-Impact UGC für Brands",
         image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=900&fit=crop&q=80",
-        ctaPrimary: "Jetzt starten",
-        urgency: "Begrenztes Angebot",
+        ctaPrimary: "UGC-Angebot anfragen",
+        urgency: "Kostenloses Strategiegespräch + Hook-Ideen inklusive",
         stats: { clients: "200+", costSaved: "70%", rating: "4.9/5" },
       }
     : {
-        title: "Scale Your Business with Dedicated Virtual Assistants",
+        title: "UGC that Converts",
         subtitle:
-          "Hire pre-vetted, German-speaking virtual assistants for 80% less than local hires. Scale your team in days, not months.",
-        tagline: "Trusted by 200+ Growing Businesses",
+          "We script, cast, shoot, and edit user-generated content that makes your product the star-optimized for TikTok, Reels, and Shorts. Fast turnaround, data-driven hooks, usage rights included.",
+        tagline: "High-Impact UGC for Brands",
         image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=900&fit=crop&q=80",
-        ctaPrimary: "Get Started Today",
-        urgency: "Limited Offer",
+        ctaPrimary: "Get a UGC Quote",
+        urgency: "Free content strategy call + hook ideas included",
         stats: { clients: "200+", costSaved: "70%", rating: "4.9/5" },
-      };
+      }, [isGe]);
 
   const [heroData, setHeroData] = useState<HeroData | null>(fallbackData);
   const [loading, setLoading] = useState(false);
@@ -210,7 +210,7 @@ export const Hero = () => {
                     localizedPath((currentLang === "ge" ? "ge" : "en") as SiteLocale, siteConfig.routes.bookMeeting)
                   );
                 }}
-                className="group relative w-full sm:w-auto text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 h-auto font-bold shadow-gold-lg transform hover:scale-[1.06] hover:-translate-y-2 transition-all duration-300 hover:brightness-110 cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-yellow-400/30 text-foreground"
+                className="group relative w-full sm:w-auto text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 h-auto font-bold shadow-gold-lg transform hover:scale-[1.06] hover:-translate-y-2 transition-all duration-300 hover:brightness-110 cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-brand/40 text-foreground"
                 aria-label="Get started with Don VA virtual assistant services"
               >
                 <motion.div
@@ -423,7 +423,7 @@ export const Hero = () => {
               aria-hidden
             />
             <motion.div
-              className="absolute top-1/2 -left-4 w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400/10 rounded-full blur-2xl"
+              className="absolute top-1/2 -left-4 w-12 h-12 sm:w-16 sm:h-16 bg-brand/10 rounded-full blur-2xl"
               animate={{ x: [-10, 10, -10], scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               aria-hidden

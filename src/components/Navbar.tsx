@@ -12,7 +12,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
   const siteLocale = normalizeLocale(pathname);
@@ -58,8 +58,8 @@ export const Navbar = () => {
   }, []);
 
   const toggleTheme = () => {
-    if (theme === "light") setTheme("dark");
-    else setTheme("light");
+    if (!mounted) return;
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   const switchLanguage = (lang: "en" | "de") => {
@@ -90,11 +90,10 @@ export const Navbar = () => {
 
   const ThemeIcon = () => {
     if (!mounted) return <div className="w-5 h-5" />;
-    const current = theme === "system" || !theme ? "light" : theme;
-    return current === "light" ? (
-      <Sun className="h-4 w-4 sm:h-5 sm:w-5" />
-    ) : (
+    return resolvedTheme === "dark" ? (
       <Moon className="h-4 w-4 sm:h-5 sm:w-5" />
+    ) : (
+      <Sun className="h-4 w-4 sm:h-5 sm:w-5" />
     );
   };
 
@@ -111,14 +110,14 @@ export const Navbar = () => {
           <button
             type="button"
             onClick={() => router.push(`/${localeUrlPrefix(siteLocale)}`)}
-            className="flex items-center space-x-2 sm:space-x-3 hover:bg-gold/10 rounded-lg px-2 py-1 transition-all duration-300"
+            className="flex items-center space-x-2 sm:space-x-3 hover:bg-brand/10 rounded-lg px-2 py-1 transition-all duration-300"
           >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-gold rounded-lg flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-gradient-to-br from-brand to-gold rounded-lg flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110">
               <span className="text-black font-bold text-base sm:text-lg md:text-lg lg:text-xl">
                 {siteConfig.brandMarkText}
               </span>
             </div>
-            <span className="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold text-foreground hover:text-gold transition-colors duration-300">
+            <span className="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold text-foreground hover:text-brand transition-colors duration-300">
               {siteConfig.brandName}
             </span>
           </button>
@@ -129,10 +128,10 @@ export const Navbar = () => {
                 type="button"
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="relative text-foreground hover:text-gold transition-all duration-300 font-medium text-sm md:text-sm lg:text-base px-2 md:px-2.5 lg:px-3 py-2 rounded-lg hover:bg-gold/10 group whitespace-nowrap"
+                className="relative text-foreground hover:text-brand transition-all duration-300 font-medium text-sm md:text-sm lg:text-base px-2 md:px-2.5 lg:px-3 py-2 rounded-lg hover:bg-brand/10 group whitespace-nowrap"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gold group-hover:w-3/4 transition-all duration-300" />
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-brand group-hover:w-3/4 transition-all duration-300" />
               </button>
             ))}
           </div>
@@ -142,7 +141,7 @@ export const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={() => switchLanguage(currentLang === "en" ? "de" : "en")}
-              className="px-2 py-1 text-xs md:text-xs lg:text-sm hover:bg-gold/10 hover:text-gold"
+              className="px-2 py-1 text-xs md:text-xs lg:text-sm hover:bg-brand/10 hover:text-brand"
               aria-label="Change language"
             >
               {currentLang.toUpperCase()}
@@ -152,7 +151,7 @@ export const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="relative hover:bg-gold/10 hover:text-gold w-9 h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 transition-all duration-300 hover:scale-110 overflow-hidden"
+              className="relative hover:bg-brand/10 hover:text-brand w-9 h-9 md:w-9 md:h-9 lg:w-10 lg:h-10 transition-all duration-300 hover:scale-110 overflow-hidden"
               aria-label="Toggle theme"
             >
               <ThemeIcon />
@@ -163,7 +162,7 @@ export const Navbar = () => {
               onClick={() => {
                 router.push(localizedPath(siteLocale, siteConfig.routes.contact));
               }}
-              className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-6 py-2 md:py-2 lg:py-2 border border-border/60 text-foreground rounded-lg hover:bg-gold/10 hover:text-gold transition-all duration-300 font-semibold whitespace-nowrap"
+              className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-6 py-2 md:py-2 lg:py-2 border border-border/60 text-foreground rounded-lg hover:bg-brand/10 hover:text-brand transition-all duration-300 font-semibold whitespace-nowrap"
             >
               {currentLang === "de" ? "Kontakt" : "Contact"}
             </button>
@@ -173,9 +172,9 @@ export const Navbar = () => {
               onClick={() => {
                 router.push(localizedPath(siteLocale, siteConfig.routes.bookMeeting));
               }}
-              className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-7 py-2 md:py-2 lg:py-2.5 bg-gold text-black rounded-lg hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 hover:scale-105 font-semibold whitespace-nowrap"
+              className="text-sm md:text-sm lg:text-base px-4 md:px-4 lg:px-7 py-2 md:py-2 lg:py-2.5 bg-gradient-to-r from-brand to-gold text-black rounded-lg hover:from-gold hover:to-secondary hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 hover:scale-105 font-semibold whitespace-nowrap"
             >
-              {currentLang === "de" ? "Jetzt starten" : "Get Started"}
+              {currentLang === "de" ? "UGC-Angebot" : "Get a UGC Quote"}
             </button>
           </div>
 
@@ -185,7 +184,7 @@ export const Navbar = () => {
                 variant="ghost"
                 size="icon"
                 onClick={() => switchLanguage(currentLang === "en" ? "de" : "en")}
-                className="hover:bg-gold/10 hover:text-gold w-9 h-9 transition-all duration-300"
+                className="hover:bg-brand/10 hover:text-brand w-9 h-9 transition-all duration-300"
                 aria-label="Change language"
               >
                 <span className="text-sm font-medium">{currentLang.toUpperCase()}</span>
@@ -194,7 +193,7 @@ export const Navbar = () => {
                 variant="ghost"
                 size="icon"
                 onClick={toggleTheme}
-                className="hover:bg-gold/10 hover:text-gold w-9 h-9 transition-all duration-300"
+                className="hover:bg-brand/10 hover:text-brand w-9 h-9 transition-all duration-300"
                 aria-label="Toggle theme"
               >
                 <ThemeIcon />
@@ -204,7 +203,7 @@ export const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="hover:bg-gold/10 hover:text-gold w-9 h-9 transition-all duration-300"
+              className="hover:bg-brand/10 hover:text-brand w-9 h-9 transition-all duration-300"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -227,7 +226,7 @@ export const Navbar = () => {
                     type="button"
                     key={item.name}
                     onClick={() => handleNavClick(item.href)}
-                    className="block w-full text-left text-foreground hover:text-gold hover:bg-gold/10 active:bg-gold/20 transition-all duration-200 font-medium py-3 px-4 rounded-lg mx-2"
+                    className="block w-full text-left text-foreground hover:text-brand hover:bg-brand/10 active:bg-brand/20 transition-all duration-200 font-medium py-3 px-4 rounded-lg mx-2"
                   >
                     {item.name}
                   </button>
@@ -240,7 +239,7 @@ export const Navbar = () => {
                         router.push(currentLang === "de" ? "/de/contact" : "/en/contact");
                         setIsOpen(false);
                       }}
-                      className="w-full text-center text-base py-3 border border-border/60 rounded-lg font-semibold hover:bg-gold/10 hover:text-gold transition-colors"
+                      className="w-full text-center text-base py-3 border border-border/60 rounded-lg font-semibold hover:bg-brand/10 hover:text-brand transition-colors"
                     >
                       {currentLang === "de" ? "Kontakt" : "Contact"}
                     </button>
@@ -250,7 +249,7 @@ export const Navbar = () => {
                         router.push(currentLang === "de" ? "/de/book-meeting" : "/en/book-meeting");
                         setIsOpen(false);
                       }}
-                      className="w-full text-center text-base py-3 bg-gold text-black rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                      className="w-full text-center text-base py-3 bg-gradient-to-r from-brand to-gold text-black rounded-lg font-semibold hover:from-gold hover:to-secondary hover:shadow-lg transition-all duration-300"
                     >
                       {currentLang === "de" ? "Jetzt starten" : "Get Started"}
                     </button>

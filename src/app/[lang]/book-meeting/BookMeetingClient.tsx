@@ -61,7 +61,7 @@ export default function BookMeetingClient() {
               whileHover={{ scale: 1.02 }}
             >
               <motion.div
-                className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gold via-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-gold/30 transition-all duration-500"
+                className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-brand via-gold to-secondary rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-gold/30 transition-all duration-500"
                 whileHover={{ rotate: 5, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -69,7 +69,7 @@ export default function BookMeetingClient() {
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </motion.div>
               <div className="flex flex-col">
-                <span className="text-xl sm:text-2xl font-black bg-gradient-to-r from-foreground via-foreground to-foreground/90 bg-clip-text text-transparent group-hover:from-gold group-hover:to-yellow-600 transition-all duration-300">
+                <span className="text-xl sm:text-2xl font-black bg-gradient-to-r from-foreground via-foreground to-foreground/90 bg-clip-text text-transparent group-hover:from-gold group-hover:to-secondary transition-all duration-300">
                   Don Va
                 </span>
                 <span className="text-[10px] sm:text-xs text-gold/80 font-semibold -mt-1 tracking-wide">
@@ -97,7 +97,7 @@ export default function BookMeetingClient() {
                       "noopener,noreferrer"
                     )
                   }
-                  className="bg-gradient-to-r from-gold to-yellow-600 hover:from-yellow-600 hover:to-gold text-black font-bold px-6 py-2 rounded-xl shadow-lg hover:shadow-xl hover:shadow-gold/30 transition-all duration-300 border-2 border-gold/50"
+                  className="bg-gradient-to-r from-brand to-gold hover:from-gold hover:to-secondary text-black font-bold px-6 py-2 rounded-xl shadow-lg hover:shadow-xl hover:shadow-gold/30 transition-all duration-300 border-2 border-gold/50"
                 >
                   <Calendar className="w-4 h-4 mr-2" />
                   Book Now
@@ -155,7 +155,7 @@ export default function BookMeetingClient() {
                           ?.scrollIntoView({ behavior: "smooth" });
                         setMobileMenuOpen(false);
                       }}
-                      className="w-full bg-gradient-to-r from-gold to-yellow-600 hover:from-yellow-600 hover:to-gold text-black font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-gradient-to-r from-brand to-gold hover:from-gold hover:to-secondary text-black font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                       <Calendar className="w-5 h-5 mr-2" />
                       Book Your Meeting Now

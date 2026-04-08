@@ -185,6 +185,20 @@ export const colorSchemes = {
       goldDark: 'hsl(0, 84%, 50%)',
     },
   },
+  
+  // UGC Theme
+  ugc: {
+    ...defaultDesignTokens,
+    colors: {
+      ...defaultDesignTokens.colors,
+      primary: 'hsl(48, 100%, 53%)', // Yellow
+      secondary: 'hsl(142, 70%, 45%)', // Green
+      accent: 'hsl(48, 100%, 65%)', // Brighter yellow
+      gold: 'hsl(48, 100%, 53%)', // Yellow
+      goldLight: 'hsl(48, 100%, 65%)', // Lighter yellow
+      goldDark: 'hsl(48, 100%, 45%)', // Darker yellow
+    },
+  },
 };
 
 // Helper function to get CSS custom properties
