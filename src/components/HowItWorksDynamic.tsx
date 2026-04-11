@@ -67,26 +67,26 @@ export const HowItWorksDynamic = () => {
           const fallbackSteps: HowItWorksStep[] = [
             {
               stepNumber: 1,
-              title: "Schedule a Free Consultation",
-              description: "Book a 30-minute call with our team to discuss your needs and requirements.",
+              title: "Brief & Strategy Call",
+              description: "Book a free call to discuss your product, target audience, and campaign goals.",
               icon: "Calendar"
             },
             {
               stepNumber: 2,
-              title: "Get Matched with Your VA",
-              description: "We'll match you with a pre-vetted virtual assistant based on your specific needs.",
+              title: "Creator Casting & Production",
+              description: "We cast authentic creators matching your brand and coordinate the full production.",
               icon: "UserCheck"
             },
             {
               stepNumber: 3,
-              title: "Onboard and Start Working",
-              description: "Meet your VA and begin delegating tasks. We'll handle all the paperwork.",
+              title: "Edit & Deliver",
+              description: "Receive platform-optimized videos with hooks, captions, and multiple variations.",
               icon: "Rocket"
             },
             {
               stepNumber: 4,
-              title: "Scale Your Business",
-              description: "Watch your productivity soar as your VA handles routine tasks and supports your growth.",
+              title: "Test & Scale",
+              description: "Track performance, iterate on winners, and scale your UGC for maximum ROAS.",
               icon: "LineChart"
             }
           ];
@@ -101,26 +101,26 @@ export const HowItWorksDynamic = () => {
         const fallbackSteps: HowItWorksStep[] = [
           {
             stepNumber: 1,
-            title: "Schedule a Free Consultation",
-            description: "Book a 30-minute call with our team to discuss your needs and requirements.",
+            title: "Brief & Strategy Call",
+            description: "Book a free call to discuss your product, target audience, and campaign goals.",
             icon: "Calendar"
           },
           {
             stepNumber: 2,
-            title: "Get Matched with Your VA",
-            description: "We'll match you with a pre-vetted virtual assistant based on your specific needs.",
+            title: "Creator Casting & Production",
+            description: "We cast authentic creators matching your brand and coordinate the full production.",
             icon: "UserCheck"
           },
           {
             stepNumber: 3,
-            title: "Onboard and Start Working",
-            description: "Meet your VA and begin delegating tasks. We'll handle all the paperwork.",
+            title: "Edit & Deliver",
+            description: "Receive platform-optimized videos with hooks, captions, and multiple variations.",
             icon: "Rocket"
           },
           {
             stepNumber: 4,
-            title: "Scale Your Business",
-            description: "Watch your productivity soar as your VA handles routine tasks and supports your growth.",
+            title: "Test & Scale",
+            description: "Track performance, iterate on winners, and scale your UGC for maximum ROAS.",
             icon: "LineChart"
           }
         ];

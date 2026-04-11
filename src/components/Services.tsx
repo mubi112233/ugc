@@ -19,12 +19,12 @@ const sectionCopy = {
   en: {
     badge: "Services",
     heading: "Our Services",
-    description: "Comprehensive virtual assistant solutions tailored to your business needs. From administrative tasks to specialized support, we've got you covered.",
+    description: "End-to-end UGC creation from strategy to delivery. We handle scripting, creator casting, production, editing, and performance optimization.",
   },
   ge: {
     badge: "Dienstleistungen",
     heading: "Unsere Dienstleistungen",
-    description: "Umfassende virtuelle Assistenzlösungen, die auf Ihre Geschäftsbedürfnisse zugeschnitten sind. Von administrativen Aufgaben bis hin zu spezialisierten Dienstleistungen.",
+    description: "UGC-Produktion von der Strategie bis zur Auslieferung. Wir kümmern uns um Konzeption, Creator-Casting, Produktion, Schnitt und Performance-Optimierung.",
   },
 };
 

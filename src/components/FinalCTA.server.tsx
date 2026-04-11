@@ -20,17 +20,17 @@ import { fetchFinalCtaSectionData, type FinalCtaSectionPayload } from "@/lib/dat
 const fallbackCopy = {
   en: {
     badge: "Ready to Scale?",
-    headlineLine1: "Start with",
-    headlineLine2: "DON VA Today",
+    headlineLine1: "Get UGC that",
+    headlineLine2: "Converts Today",
     subheading:
-      "Book a free consultation and see how we can transform your operations in 48 hours.",
-    benefits: ["No setup fees", "14-day trial", "Native managers", "24/7 support"],
-    stats: { activeClients: "200+", avgRoi: "3.5x", satisfaction: "98%", fastStart: "48h" },
+      "Book a free strategy call and see how user-generated content can boost your ROAS in days.",
+    benefits: ["No setup fees", "Usage rights included", "5-7 day delivery", "Performance tracking"],
+    stats: { activeClients: "500+", avgRoi: "3x", satisfaction: "98%", fastStart: "5-7d" },
     statsLabels: {
-      activeClients: "Active Clients",
-      avgRoi: "Avg. ROI",
+      activeClients: "Brands Served",
+      avgRoi: "Avg. ROAS",
       satisfaction: "Satisfaction",
-      fastStart: "Fast Start",
+      fastStart: "Turnaround",
     },
     trust: {
       consultationTime: "30 min",
@@ -46,17 +46,17 @@ const fallbackCopy = {
   },
   ge: {
     badge: "Bereit zu skalieren?",
-    headlineLine1: "Starten Sie noch heute",
-    headlineLine2: "mit DON VA",
+    headlineLine1: "UGC, das",
+    headlineLine2: "konvertiert",
     subheading:
-      "Buchen Sie eine kostenlose Beratung und erleben Sie, wie wir Ihre Abläufe in 48 Stunden transformieren.",
-    benefits: ["Keine Einrichtungsgebühren", "14-Tage-Test", "Native Manager", "24/7 Support"],
-    stats: { activeClients: "200+", avgRoi: "3.5x", satisfaction: "98%", fastStart: "48h" },
+      "Buchen Sie eine kostenlose Strategie-Beratung und erfahren Sie, wie UGC Ihren ROAS steigern kann.",
+    benefits: ["Keine Setup-Gebühren", "Nutzungsrechte inklusive", "5-7 Tage Lieferzeit", "Performance-Tracking"],
+    stats: { activeClients: "500+", avgRoi: "3x", satisfaction: "98%", fastStart: "5-7 Tg" },
     statsLabels: {
-      activeClients: "Aktive Kunden",
-      avgRoi: "Ø ROI",
+      activeClients: "Marken bedient",
+      avgRoi: "Ø ROAS",
       satisfaction: "Zufriedenheit",
-      fastStart: "Schnellstart",
+      fastStart: "Lieferzeit",
     },
     trust: {
       consultationTime: "30 Min.",

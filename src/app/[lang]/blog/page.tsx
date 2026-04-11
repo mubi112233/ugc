@@ -14,29 +14,29 @@ export async function generateMetadata({
 
   const isDe = seg === "de";
   const title = isDe
-    ? "Blog — Tipps zu virtuellen Assistenten & Remote-Teams | DON VA"
-    : "Blog — Virtual Assistant Tips & Remote Work | DON VA";
+    ? "Blog — UGC Tipps & Content Creation | UGC Studio"
+    : "Blog — UGC Tips & Content Creation | UGC Studio";
   const description = isDe
-    ? "Einblicke, Tipps und Best Practices zu virtuellen Assistenten, Outsourcing und skalierbaren Teams — auf Deutsch."
-    : "Insights, tips, and best practices for virtual assistants, outsourcing, and scalable remote teams.";
+    ? "Einblicke, Tipps und Best Practices zu User Generated Content, Creator Casting und TikTok/Reels Marketing."
+    : "Insights, tips, and best practices for user generated content, creator casting, and TikTok/Reels marketing.";
 
   return {
     title,
     description,
     keywords: isDe
       ? [
-          "virtuelle assistenz blog",
-          "virtueller assistent tipps",
-          "remote team deutsch",
-          "outsourcing VA",
-          "DON VA",
+          "ugc blog",
+          "content creation tipps",
+          "tiktok marketing deutsch",
+          "creator casting",
+          "UGC Studio",
         ]
       : [
-          "virtual assistant blog",
-          "remote team tips",
-          "VA outsourcing",
-          "scale with VAs",
-          "DON VA",
+          "ugc blog",
+          "content creation tips",
+          "tiktok marketing",
+          "creator casting",
+          "UGC Studio",
         ],
     alternates: {
       canonical,
@@ -49,8 +49,8 @@ export async function generateMetadata({
       type: "website",
       locale: isDe ? "de_DE" : "en_US",
       alternateLocale: isDe ? "en_US" : "de_DE",
-      siteName: "DON VA",
-      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "DON VA" }],
+      siteName: "UGC Studio",
+      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "UGC Studio" }],
     },
     twitter: {
       card: "summary_large_image",

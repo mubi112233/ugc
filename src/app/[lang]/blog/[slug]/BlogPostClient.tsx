@@ -217,10 +217,10 @@ export default function BlogPostClient({
           className="mt-8 sm:mt-10 p-6 sm:p-8 bg-gradient-to-br from-gold/10 via-gold/5 to-transparent border-2 border-gold/30 rounded-2xl text-center"
         >
           <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
-            {isGe ? "Bereit, Ihr Team zu skalieren?" : "Ready to Scale Your Team?"}
+            {isGe ? "Bereit, mit UGC zu skalieren?" : "Ready to Scale with UGC?"}
           </h3>
           <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-2xl mx-auto">
-            {isGe ? "Entdecken Sie, wie virtuelle Assistenten Ihr Unternehmen transformieren können." : "Discover how virtual assistants can transform your business."}
+            {isGe ? "Entdecken Sie, wie User Generated Content Ihre Conversion-Rate steigern kann." : "Discover how user-generated content can boost your conversion rates."}
           </p>
           <button
             onClick={() =>

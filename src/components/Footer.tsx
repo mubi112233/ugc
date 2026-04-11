@@ -21,10 +21,10 @@ export const Footer: React.FC = () => {
         { label: "Contact Us", href: "/en/contact" },
       ],
       serviceLinks: [
-        { label: "Social Media Management", href: "/en/#services" },
-        { label: "Customer Support VAs", href: "/en/#services" },
-        { label: "Back-Office & Admin", href: "/en/#services" },
-        { label: "SEO & Content", href: "/en/#services" },
+        { label: "UGC Video Production", href: "/en/#services" },
+        { label: "Creator Casting", href: "/en/#services" },
+        { label: "Script & Hook Strategy", href: "/en/#services" },
+        { label: "TikTok & Reels Editing", href: "/en/#services" },
         { label: "Pricing Plans", href: "/en/#pricing" },
       ],
       resourceLinks: [
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
         { label: "FAQ", href: "/en/#faq" },
         { label: "Testimonials", href: "/en/#testimonials" },
       ],
-      tagline: "Pre-vetted, German-speaking virtual assistants for 80% less than local hires.",
+      tagline: "High-converting UGC for TikTok, Reels, and Shorts. 500+ brands trust our creator network.",
       rights: "All rights reserved.",
     },
     ge: {
@@ -47,10 +47,10 @@ export const Footer: React.FC = () => {
         { label: "Kontakt", href: "/de/contact" },
       ],
       serviceLinks: [
-        { label: "Social Media Management", href: "/de/#services" },
-        { label: "Kundensupport VAs", href: "/de/#services" },
-        { label: "Back-Office & Admin", href: "/de/#services" },
-        { label: "SEO & Content", href: "/de/#services" },
+        { label: "UGC Video-Produktion", href: "/de/#services" },
+        { label: "Creator-Casting", href: "/de/#services" },
+        { label: "Script & Hook-Strategie", href: "/de/#services" },
+        { label: "TikTok & Reels Schnitt", href: "/de/#services" },
         { label: "Preispläne", href: "/de/#pricing" },
       ],
       resourceLinks: [
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
         { label: "FAQ", href: "/de/#faq" },
         { label: "Testimonials", href: "/de/#testimonials" },
       ],
-      tagline: "Geprüfte, deutschsprachige virtuelle Assistenten für 80% weniger als lokale Einstellungen.",
+      tagline: "Hochkonvertierender UGC für TikTok, Reels und Shorts. 500+ Marken vertrauen unserem Creator-Netzwerk.",
       rights: "Alle Rechte vorbehalten.",
     },
   };
@@ -134,7 +134,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Don Va. {c.rights}</p>
+          <p>© {new Date().getFullYear()} UGC Studio. {c.rights}</p>
           <div className="flex items-center gap-4">
             <Link href={localizedPath(lang, siteConfig.routes.blog)} className="hover:text-gold transition-colors">Blog</Link>
             <Link href={localizedPath(lang, siteConfig.routes.contact)} className="hover:text-gold transition-colors">{isGe ? "Kontakt" : "Contact"}</Link>

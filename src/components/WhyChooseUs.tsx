@@ -39,26 +39,26 @@ export const WhyChooseUs = () => {
   const fallbackData: WhyChooseUsData = useMemo(() => isGe ? {
     badge: "Warum wir",
     heading: "Was uns <span class=\"text-gold\">auszeichnet</span>",
-    description: "Deutschsprachige Talente, native Qualitätskontrolle, schnelles Onboarding und eine Null‑Risiko‑Garantie.",
+    description: "Datenbasierte Hooks, authentische Creator und plattformoptimierte Videos für maximale Conversion.",
     items: [
-      { icon: "Target", title: "Sorgfältig geprüfte Fachkräfte", description: "Jeder virtuelle Assistent wird sorgfältig geprüft und getestet, um unsere hohen Qualitätsstandards zu erfüllen." },
-      { icon: "Shield", title: "Sicher & vertraulich", description: "Ihre Daten und Geschäftsinformationen sind durch Sicherheitsmaßnahmen auf Unternehmensebene geschützt." },
-      { icon: "Zap", title: "Blitzschnelles Onboarding", description: "Starten Sie innerhalb von 24 Stunden. Unser optimierter Prozess stellt sicher, dass Sie schnell den richtigen Assistenten haben." },
-      { icon: "HeartHandshake", title: "Dedizierter Support", description: "Unser Team ist immer verfügbar, um eine reibungslose Zusammenarbeit zu gewährleisten und Anliegen zu klären." },
-      { icon: "TrendingUp", title: "Skalierbare Lösungen", description: "Skalieren Sie flexibel nach oben oder unten, ohne den Aufwand traditioneller Einstellungen." },
-      { icon: "Award", title: "Bewährte Erfolgsbilanz", description: "Von 200+ Unternehmen vertraut mit einer Kundenzufriedenheitsrate von 95%." },
+      { icon: "Target", title: "Strategische Planung", description: "Wir entwickeln Hook- und Content-Strategien basierend auf Ihren Zielen und Ihrer Zielgruppe." },
+      { icon: "Users", title: "Geprüfte Creator", description: "Jeder Creator wird sorgfältig geprüft, um sicherzustellen, dass er zu Ihrer Marke und Zielgruppe passt." },
+      { icon: "Zap", title: "Schnelle Lieferung", description: "Von Briefing bis fertiges Video in 5-7 Tagen. Mehrere Format-Variationen inklusive." },
+      { icon: "HeartHandshake", title: "Volle Nutzungsrechte", description: "Alle Videos inklusive kommerzieller Nutzungsrechte für Paid Social und organischen Content." },
+      { icon: "TrendingUp", title: "Performance-Optimierung", description: "Wir testen Hooks, analysieren Daten und iterieren für kontinuierlich bessere Ergebnisse." },
+      { icon: "Award", title: "Bewährte Erfolgsbilanz", description: "Von 500+ Marken vertraut mit durchschnittlich 3x besserer ROAS als Studio-Werbespots." },
     ]
   } : {
     badge: "Why Choose Us",
-    heading: "The Perfect Virtual Assistant Solution",
-    description: "Experience the difference with our professional virtual assistants who are trained to deliver exceptional results.",
+    heading: "UGC That <span class=\"text-gold\">Converts</span>",
+    description: "Data-driven hooks, authentic creators, and platform-optimized videos for maximum ROI.",
     items: [
-      { icon: "Target", title: "Expertly Vetted Professionals", description: "Every virtual assistant is carefully screened and tested to ensure they meet our high standards of excellence." },
-      { icon: "Shield", title: "Secure & Confidential", description: "Your data and business information are protected with enterprise-grade security measures." },
-      { icon: "Zap", title: "Lightning Fast Onboarding", description: "Get started within 24 hours. Our streamlined process ensures you have the right assistant quickly." },
-      { icon: "HeartHandshake", title: "Dedicated Support", description: "Our team is always available to ensure smooth collaboration and address any concerns." },
-      { icon: "TrendingUp", title: "Scalable Solutions", description: "Easily scale up or down based on your business needs without the overhead of traditional hiring." },
-      { icon: "Award", title: "Proven Track Record", description: "Trusted by 200+ businesses with a 95% client satisfaction rate." },
+      { icon: "Target", title: "Strategic Planning", description: "We develop hook and content strategies based on your goals, audience, and conversion objectives." },
+      { icon: "Users", title: "Vetted Creators", description: "Every creator is carefully screened to ensure they match your brand voice and target demographics." },
+      { icon: "Zap", title: "Fast Turnaround", description: "From brief to final video in 5-7 days. Multiple format variations included for testing." },
+      { icon: "HeartHandshake", title: "Full Usage Rights", description: "All videos include commercial usage rights for paid social and organic content across platforms." },
+      { icon: "TrendingUp", title: "Performance Optimization", description: "We test hooks, analyze data, and iterate for continuously improving results and lower CPAs." },
+      { icon: "Award", title: "Proven Track Record", description: "Trusted by 500+ brands with 3x better ROAS on average compared to studio ads." },
     ]
   }, [isGe]);
 

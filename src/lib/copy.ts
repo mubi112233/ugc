@@ -103,7 +103,7 @@ export const copy = {
       startingFrom: "Starting from €{price}/mo",
       bulkDiscount: "{percent}% bulk discount applied!",
       bulkSavings: "You save €{amount} total",
-      bulkHint: "Add {count} more VA{suffix} to unlock {percent}% bulk discount",
+      bulkHint: "Add {count} more video{suffix} to unlock {percent}% bulk discount",
       bannerBadge: "Limited Time",
       bannerTitle: "Free UGC Strategy Call",
       bannerSubtitle: "Get expert advice on UGC strategy, creator casting, and platform optimization before choosing a package.",
@@ -115,45 +115,45 @@ export const copy = {
       plans: {
         starter: {
           name: "Starter",
-          hours: "10h / week",
+          hours: "3 Videos",
           features: [
-            "Dedicated VA",
-            "Native Quality Control",
-            "24h Replacement Guarantee",
-            "Slack/Email Support",
-            "14 Days Money-Back Warranty"
+            "3 UGC Videos",
+            "Script & Hook Strategy",
+            "Creator Casting",
+            "Editing & Captions",
+            "Usage Rights Included"
           ]
         },
         professional: {
           name: "Professional",
-          hours: "20h / week",
+          hours: "10 Videos",
           features: [
             "Everything in Starter",
             "No Setup Fee",
             "Priority Support",
-            "Bi-weekly Progress Reports",
-            "Flexible Hour Rollover"
+            "Hook Variations",
+            "Performance Tracking"
           ]
         },
         enterprise: {
           name: "Enterprise",
-          hours: "40h / week",
+          hours: "30+ Videos",
           badge: "Best Value",
           features: [
             "Everything in Professional",
-            "No Setup Fee",
             "Dedicated Account Manager",
             "Weekly Strategy Calls",
-            "Custom Workflow Integration"
+            "A/B Testing",
+            "Custom Workflow"
           ]
         }
       },
       button: "Get Started",
       perMonth: "/mo",
-      hoursUnit: "hours",
+      hoursUnit: "Videos",
       planSetupFee: "+€{fee} setup fee",
       planNoSetupFee: "No setup fee",
-      disclaimer: "All prices are per VA. Bulk discounts apply automatically. Setup fees are one-time charges."
+      disclaimer: "All packages include commercial usage rights. Bulk discounts apply automatically.",
     },
 
     // Final CTA
@@ -183,13 +183,13 @@ export const copy = {
         },
         step2: {
           step: "Schritt 2",
-          title: "VA-Vermittlung & Onboarding",
-          description: "Wir vermitteln Ihnen den perfekten virtuellen Assistenten und übernehmen alle Onboarding-Prozesse."
+          title: "Creator Casting & Produktion",
+          description: "Wir casten authentische Creator, die zu Ihrer Marke passen, und koordinieren die komplette Produktion."
         },
         step3: {
           step: "Schritt 3",
-          title: "Integration & Schulung",
-          description: "Ihr VA integriert sich in Ihr Team und erhält spezifisches Training für Ihre Workflows."
+          title: "Schnitt & Optimierung",
+          description: "Wir schneiden plattformoptimierte Videos mit Hooks, Captions und mehreren Variationen zum Testen."
         },
         step4: {
           step: "Schritt 4",
@@ -209,7 +209,7 @@ export const copy = {
     // Testimonials
     testimonials: {
       heading: "Vertrauen von <span class=\"text-gold\">wachsenden Unternehmen</span>",
-      subheading: "Echte Ergebnisse von Unternehmen, die mit DON VA skalieren.",
+      subheading: "Echte Ergebnisse von Marken, die mit UGC Studio skalieren.",
       caseStudy: {
         badge: "Erfolgsgeschichte",
         title: "Fallstudie: <span class=\"text-gold\">70% Kostensenkung</span>",
@@ -231,8 +231,8 @@ export const copy = {
     // Case Studies
     caseStudies: {
       badge: "Erfolgsgeschichten",
-      heading: "Echte <span class=\"text-gold\">Erfolgsgeschichten</span>",
-      description: "Bewährte Ergebnisse von Teams, die mit DON VA skalieren.",
+      heading: "Echte <span class=\"text-gold\">UGC Ergebnisse</span>",
+      description: "Bewährte Ergebnisse von Marken, die mit authentischem UGC skalieren.",
       labels: {
         saved: "Gespart",
         teamSize: "Teamgröße",
@@ -259,72 +259,72 @@ export const copy = {
 
     // Pricing
     pricing: {
-      sectionBadge: "Pricing",
-      sectionTitle: "Simple, Transparent Pricing",
-      sectionDescription: "Choose the perfect plan for your business. Scale up or down anytime.",
-      vaCountLabel: "How many VAs do you need?",
-      vaCountHelper: "Select the number of virtual assistants",
-      startingFrom: "Starting from €{price}/hour",
-      bulkDiscount: "{percent}% discount - {suffix} more!",
-      bulkSavings: "Save €{amount} total",
-      bulkHint: "Add {count} more {suffix} to get {percent}% discount",
+      sectionBadge: "Preise",
+      sectionTitle: "UGC Content Pakete",
+      sectionDescription: "Production-ready UGC im Skalierungs-Modell. Alle Pakete inklusive Konzept, Creator-Casting, Dreh, Schnitt, Captions und kommerziellen Nutzungsrechten.",
+      vaCountLabel: "Wie viele Videos benötigen Sie?",
+      vaCountHelper: "Wählen Sie die Anzahl der UGC-Videos",
+      startingFrom: "Ab €{price}/Monat",
+      bulkDiscount: "{percent}% Mengenrabatt!",
+      bulkSavings: "Sie sparen €{amount} insgesamt",
+      bulkHint: "Fügen Sie {count} weitere Video{suffix} hinzu, um {percent}% Rabatt zu erhalten",
       bannerBadge: "Limited Time",
-      bannerTitle: "Book a Meeting",
-      bannerSubtitle: "Schedule your free consultation and get started today",
+      bannerTitle: "Kostenlose UGC-Strategie-Beratung",
+      bannerSubtitle: "Vereinbaren Sie ein kostenloses Strategie-Gespräch, bevor Sie ein Paket wählen",
       bannerPoints: {
-        noCommitment: "No commitment",
-        cancelAnytime: "Cancel anytime", 
-        fullAccess: "Full access"
+        noCommitment: "Keine Verpflichtung",
+        cancelAnytime: "Jederzeit kündbar",
+        fullAccess: "Voller Zugriff"
       },
       plans: {
         starter: {
           name: "Starter",
-          hours: "10h / week",
+          hours: "3 Videos",
           features: [
-            "Dedicated VA",
-            "Native Quality Control",
-            "24h Replacement Guarantee", 
-            "Slack/Email Support",
-            "14 Days Money-Back Warranty"
+            "3 UGC Videos",
+            "Script & Hook-Strategie",
+            "Creator-Casting",
+            "Schnitt & Captions",
+            "Nutzungsrechte inklusive"
           ]
         },
         professional: {
-          name: "Professional", 
-          hours: "20h / week",
+          name: "Professional",
+          hours: "10 Videos",
           features: [
-            "Everything in Starter",
-            "No Setup Fee",
-            "Priority Support",
-            "Bi-weekly Progress Reports",
-            "Flexible Hour Rollover"
+            "Alles aus Starter",
+            "Keine Setup-Gebühr",
+            "Prioritäts-Support",
+            "Hook-Variationen",
+            "Performance-Tracking"
           ]
         },
         enterprise: {
           name: "Enterprise",
-          hours: "40h / week", 
-          badge: "Best Value",
+          hours: "30+ Videos",
+          badge: "Bestes Preis-Leistungs",
           features: [
-            "Everything in Professional",
-            "No Setup Fee",
-            "Dedicated Account Manager", 
-            "Weekly Strategy Calls",
-            "Custom Workflow Integration"
+            "Alles aus Professional",
+            "Dedizierter Account Manager",
+            "Wöchentliche Strategie-Calls",
+            "A/B Testing",
+            "Custom Workflow"
           ]
         }
       },
-      button: "Get Started",
-      perMonth: "/mo",
-      hoursUnit: "hours",
-      planSetupFee: "+€{fee} setup fee",
-      planNoSetupFee: "No setup fee",
-      disclaimer: "All prices are per VA. Bulk discounts apply automatically. Setup fees are one-time charges."
+      button: "Loslegen",
+      perMonth: "/Mo",
+      hoursUnit: "Videos",
+      planSetupFee: "+€{fee} Setup-Gebühr",
+      planNoSetupFee: "Keine Setup-Gebühr",
+      disclaimer: "Alle Pakete beinhalten kommerzielle Nutzungsrechte. Mengenrabatte gelten automatisch.",
     },
 
     // Final CTA
     finalCTA: {
       badge: "Bereit zu skalieren?",
-      title: "Starten Sie noch heute mit <span class=\"text-gold\">DON VA</span>",
-      description: "Buchen Sie eine kostenlose Beratung und erleben Sie, wie wir Ihre Abläufe in 48 Stunden transformieren können.",
+      title: "Starten Sie noch heute mit <span class=\"text-gold\">UGC Studio</span>",
+      description: "Buchen Sie eine kostenlose Strategie-Beratung und erhalten Sie maßgeschneiderte Hook-Ideen für Ihr Produkt.",
     },
 
     // Value Proposition (if used)

@@ -24,12 +24,12 @@ export function generateBlogStructuredData({
     "description": description,
     "author": {
       "@type": "Organization",
-      "name": "DON VA",
+      "name": "UGC Studio",
       "url": SITE_URL
     },
     "publisher": {
       "@type": "Organization",
-      "name": "DON VA",
+      "name": "UGC Studio",
       "logo": {
         "@type": "ImageObject",
         "url": absoluteUrl("/og-image.jpg")
@@ -73,7 +73,7 @@ export function generateServiceStructuredData({
     },
     "areaServed": areaServed,
     "hasOfferCatalog": hasOfferCatalog,
-    "serviceType": "Virtual Assistant Services"
+    "serviceType": "User Generated Content Services"
   };
 }
 

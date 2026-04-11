@@ -70,10 +70,10 @@ export default function BookMeetingClient() {
               </motion.div>
               <div className="flex flex-col">
                 <span className="text-xl sm:text-2xl font-black bg-gradient-to-r from-foreground via-foreground to-foreground/90 bg-clip-text text-transparent group-hover:from-gold group-hover:to-secondary transition-all duration-300">
-                  Don Va
+                  UGC Studio
                 </span>
                 <span className="text-[10px] sm:text-xs text-gold/80 font-semibold -mt-1 tracking-wide">
-                  Premium VAs
+                  Content That Converts
                 </span>
               </div>
             </motion.div>
@@ -230,8 +230,8 @@ export default function BookMeetingClient() {
               <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4">We&apos;ll Discuss</h3>
               <ul className="space-y-3">
                 {[
-                  "Your current operational challenges",
-                  "How VAs can fit into your workflow",
+                  "Your current marketing challenges",
+                  "How UGC can boost your conversion rates",
                   "Custom solutions for your business",
                   "Pricing & team structure options",
                   "Next steps to get started",
@@ -249,8 +249,8 @@ export default function BookMeetingClient() {
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-4 pt-4">
               {[
-                { value: "200+", label: "Clients" },
-                { value: "70%", label: "Cost Saved" },
+                { value: "500+", label: "Brands" },
+                { value: "60%", label: "Cost Saved" },
                 { value: "4.9/5", label: "Rating" },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center p-4 bg-card border border-border rounded-lg">
@@ -266,7 +266,7 @@ export default function BookMeetingClient() {
             <div className="lg:sticky lg:top-24">
               <div className="bg-card border border-border rounded-xl p-2 shadow-lg">
                 <iframe
-                  src="https://calendly.com/mmubasharshahzad40/new-meeting?embed_domain=don-va.com&embed_type=Inline"
+                  src="https://calendly.com/mmubasharshahzad40/new-meeting?embed_domain=don-ugc.com&embed_type=Inline"
                   className="rounded-lg"
                   style={{ minWidth: "100%", height: "600px", border: "none" }}
                   title="Book a meeting"
@@ -293,26 +293,26 @@ export default function BookMeetingClient() {
             <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-foreground">
               What Our Clients Say
             </h2>
-            <p className="text-muted-foreground">See why businesses trust Don Va</p>
+            <p className="text-muted-foreground">See why brands trust UGC Studio</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 name: "Sarah Johnson",
                 role: "CEO, TechStart Inc",
-                text: "Don Va transformed our operations. The consultation was thorough and the onboarding was seamless.",
+                text: "UGC Studio transformed our ad performance. The strategy call was thorough and the content quality exceeded expectations.",
                 rating: 5,
               },
               {
                 name: "Michael Chen",
                 role: "Founder, Digital Growth",
-                text: "Best decision we made. Our VA has become an integral part of our team within weeks.",
+                text: "Best investment we made. The UGC videos outperformed our studio ads 3:1 within the first month.",
                 rating: 5,
               },
               {
                 name: "Emma Davis",
                 role: "Director, MarketPro",
-                text: "Professional, reliable, and cost-effective. Couldn't ask for more from a VA service.",
+                text: "Professional, authentic, and high-converting. The creators matched our brand voice perfectly.",
                 rating: 5,
               },
             ].map((t, idx) => (

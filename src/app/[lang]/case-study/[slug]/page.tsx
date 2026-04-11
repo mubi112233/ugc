@@ -45,7 +45,7 @@ export async function generateMetadata({
 
   if (!caseStudy) return {};
 
-  const title = `${caseStudy.company} - ${caseStudy.title} | DON VA`;
+  const title = `${caseStudy.company} - ${caseStudy.title} | UGC Studio`;
   const description = caseStudy.challenge.substring(0, 160);
   const pathAfterLocale = `case-study/${slug}`;
   const canonical = absoluteUrl(`/${urlSeg}/${pathAfterLocale}`);

@@ -211,7 +211,7 @@ export const Hero = () => {
                   );
                 }}
                 className="group relative w-full sm:w-auto text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 h-auto font-bold shadow-gold-lg transform hover:scale-[1.06] hover:-translate-y-2 transition-all duration-300 hover:brightness-110 cursor-pointer overflow-hidden rounded-xl border-2 border-transparent hover:border-brand/40 text-foreground"
-                aria-label="Get started with Don VA virtual assistant services"
+                aria-label="Get started with UGC content creation services"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
@@ -297,7 +297,7 @@ export const Hero = () => {
               <motion.div style={{ transform: "translateZ(20px)" }}>
                 <Image
                   src={heroImage}
-                  alt={isGe ? "Virtueller Assistent am Arbeiten" : "Virtual Assistant Working"}
+                  alt={isGe ? "UGC Video Produktion" : "UGC Video Production"}
                   width={1200}
                   height={900}
                   className="w-full h-auto object-cover"

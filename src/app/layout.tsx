@@ -146,14 +146,14 @@ export default async function RootLayout({
   return (
     <html lang={htmlLang} suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNDGNQ7Z74" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLKM5WTHL8" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-LNDGNQ7Z74');
+              gtag('config', 'G-VLKM5WTHL8');
             `,
           }}
         />

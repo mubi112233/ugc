@@ -13,10 +13,10 @@ export async function generateMetadata({
   const { lang: raw } = await params;
   const seg = publicLocalePathSegment(raw);
   const isDE = seg === "de";
-  const title = isDE ? "Kontakt — DON VA | Virtuelle Assistenten" : "Contact — DON VA | Virtual Assistants";
+  const title = isDE ? "Kontakt — UGC Studio | Content Creation" : "Contact — UGC Studio | UGC Content Services";
   const description = isDE
-    ? "Kontaktieren Sie DON VA für Beratung zu deutschsprachigen virtuellen Assistenten und Remote-Teams."
-    : "Contact DON VA for a consultation about German-speaking virtual assistants and remote team scaling.";
+    ? "Kontaktieren Sie UGC Studio für eine Beratung zu User Generated Content, Creator Casting und Video-Produktion."
+    : "Contact UGC Studio for a consultation about user-generated content, creator casting, and video production.";
   const { languages } = hreflangAlternates("contact");
   const canonical = absoluteUrl(`/${seg}/contact`);
 
@@ -24,8 +24,8 @@ export async function generateMetadata({
     title,
     description,
     keywords: isDE
-      ? ["kontakt DON VA", "virtuelle assistenz anfrage", "VA beratung"]
-      : ["contact DON VA", "virtual assistant inquiry", "VA consultation"],
+      ? ["kontakt UGC Studio", "UGC beratung", "content creation anfrage"]
+      : ["contact UGC Studio", "UGC inquiry", "content creation consultation"],
     alternates: {
       canonical,
       languages,
@@ -37,8 +37,8 @@ export async function generateMetadata({
       type: "website",
       locale: isDE ? "de_DE" : "en_US",
       alternateLocale: isDE ? "en_US" : "de_DE",
-      siteName: "DON VA",
-      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "DON VA" }],
+      siteName: "UGC Studio",
+      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "UGC Studio" }],
     },
     twitter: {
       card: "summary_large_image",

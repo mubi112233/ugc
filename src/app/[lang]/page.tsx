@@ -31,32 +31,33 @@ export async function generateMetadata({
   const title =
     hero?.metaTitle ||
     (lang === "ge"
-      ? "DON VA – Virtuelle Assistenten & Remote-Teams | Geprüfte VAs"
-      : "DON VA – Virtual Assistant Services | German-Speaking VAs");
+      ? "UGC Studio – Authentischer Content für TikTok, Reels & Shorts"
+      : "UGC Studio | High-Converting User Generated Content for TikTok, Reels, Shorts");
   const description =
     hero?.metaDescription ||
     (lang === "ge"
-      ? "Geprüfte, deutschsprachige virtuelle Assistenten für deutlich weniger als lokale Einstellungen. Skalieren Sie Ihr Team schnell und sicher — ideal für DACH."
-      : "Hire pre-vetted, German-speaking virtual assistants for far less than local hires. Scale your team in days with quality control built in.");
+      ? "Wir skripten, casten, drehen und schneiden UGC, das konvertiert – optimiert für TikTok, Reels und Shorts. Schnelle Lieferung, Nutzungsrechte inklusive."
+      : "We script, cast, shoot, and edit UGC that converts – optimized for TikTok, Reels, and Shorts. Fast turnaround, usage rights included.");
   const keywordsFromHero = hero?.metaKeywords
     ? hero.metaKeywords.split(",").map((k: string) => k.trim())
     : null;
   const defaultDeKeywords = [
-    "virtuelle assistenz",
-    "virtueller assistent deutsch",
-    "deutschsprachiger VA",
-    "remote assistent",
-    "outsourcing deutschland",
-    "virtuelle assistenz agentur",
-    "DON VA",
+    "UGC",
+    "user generated content",
+    "TikTok Videos",
+    "Instagram Reels",
+    "Content Creation",
+    "UGC Studio",
+    "Video Marketing",
   ];
   const defaultEnKeywords = [
-    "virtual assistant",
-    "German speaking VA",
-    "remote assistant",
-    "outsource admin",
-    "DACH business support",
-    "DON VA",
+    "UGC",
+    "user generated content",
+    "TikTok videos",
+    "Instagram Reels",
+    "content creation",
+    "UGC Studio",
+    "video marketing",
   ];
   const keywords = keywordsFromHero ?? (lang === "ge" ? defaultDeKeywords : defaultEnKeywords);
   const pathSeg = publicLocalePathSegment(lang);
@@ -76,7 +77,7 @@ export async function generateMetadata({
       description,
       url: canonical,
       type: "website",
-      siteName: "DON VA",
+      siteName: "UGC Studio",
       locale: lang === "ge" ? "de_DE" : "en_US",
       alternateLocale: lang === "ge" ? "en_US" : "de_DE",
       images: [
@@ -84,7 +85,7 @@ export async function generateMetadata({
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: lang === "ge" ? "DON VA — Virtuelle Assistenten" : "DON VA — Virtual assistant services",
+          alt: lang === "ge" ? "UGC Studio — User Generated Content" : "UGC Studio — High-Converting UGC",
         },
       ],
     },
@@ -110,10 +111,10 @@ const pageJsonLd = (baseUrl: string) => ({
   en: {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "DON VA Virtual Assistant Services",
-    provider: { "@type": "Organization", name: "DON VA" },
+    name: "UGC Studio - User Generated Content Services",
+    provider: { "@type": "Organization", name: "UGC Studio" },
     description:
-      "Pre-vetted, German-speaking virtual assistants for growing teams — strong fit for DACH and global companies.",
+      "High-converting UGC for TikTok, Reels, and Shorts. Script, shoot, edit + usage rights included. Trusted by 500+ brands.",
     areaServed: [
       { "@type": "Country", name: "Germany" },
       { "@type": "Country", name: "Austria" },
@@ -126,10 +127,10 @@ const pageJsonLd = (baseUrl: string) => ({
   ge: {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "DON VA Virtuelle Assistenten",
-    provider: { "@type": "Organization", name: "DON VA" },
+    name: "UGC Studio - User Generated Content",
+    provider: { "@type": "Organization", name: "UGC Studio" },
     description:
-      "Geprüfte, deutschsprachige virtuelle Assistenten für Unternehmen in DACH — schnelle Einarbeitung und laufende Qualitätskontrolle.",
+      "Hochkonvertierender UGC für TikTok, Reels und Shorts. Konzept, Dreh, Schnitt + Nutzungsrechte inklusive. 500+ Marken vertrauen uns.",
     areaServed: [
       { "@type": "Country", name: "Germany" },
       { "@type": "Country", name: "Austria" },
