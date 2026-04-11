@@ -71,6 +71,7 @@ export const Blog = () => {
             )
           : [];
 
+        console.log('Blog data:', fetchedBlogs.map((b: BlogPost) => ({ title: b.title, excerpt: b.excerpt?.substring(0, 30), content: b.content?.substring(0, 30) })));
         setPosts(fetchedBlogs);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to load blogs");
@@ -190,8 +191,8 @@ export const Blog = () => {
                     {post.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
-                    {post.excerpt || (post.content ? post.content.replace(/<[^>]*>/g, '').substring(0, 120) + '...' : '')}
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3 min-h-[2.5rem]">
+                    {(post.excerpt && post.excerpt.trim()) || (post.content ? post.content.replace(/<[^>]*>/g, '').substring(0, 120) + '...' : 'Learn practical UGC strategies and tips to boost your content performance...')}
                   </p>
 
                   <div className="flex items-center justify-between pt-4 sm:pt-6 border-t border-border/50 mt-auto">
