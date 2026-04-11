@@ -191,7 +191,7 @@ export const Blog = () => {
                   </h3>
 
                   <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-3">
-                    {post.excerpt}
+                    {post.excerpt || (post.content ? post.content.replace(/<[^>]*>/g, '').substring(0, 120) + '...' : '')}
                   </p>
 
                   <div className="flex items-center justify-between pt-4 sm:pt-6 border-t border-border/50 mt-auto">
