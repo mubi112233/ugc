@@ -6,7 +6,8 @@ import { generateBlogStructuredData } from "@/lib/structured-data";
 import { absoluteUrl, hreflangAlternates, publicLocalePathSegment } from "@/lib/site-url";
 
 interface BlogPost {
-  blogId: number;
+  blogId?: number;
+  id?: number | string;
   title: string;
   excerpt: string;
   content: string;
@@ -23,7 +24,7 @@ async function getBlogPost(lang: string, slug: string): Promise<BlogPost | null>
     if (isNaN(postId)) return null;
     const data = await fetchApiData<any>(API_ENDPOINTS.BLOGS, normalizeLanguage(lang));
     const posts: BlogPost[] = Array.isArray(data?.posts) ? data.posts : Array.isArray(data?.blogs) ? data.blogs : [];
-    return posts.find((p) => p.blogId === postId) ?? null;
+    return posts.find((p) => p.blogId === postId || p.id === postId) ?? null;
   } catch {
     return null;
   }

@@ -11,7 +11,8 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { localizedPath, siteConfig, type SiteLocale } from "@/lib/site-config";
 
 interface BlogPost {
-  blogId: number;
+  blogId?: number;
+  id?: number | string;
   title: string;
   excerpt: string;
   content: string;
