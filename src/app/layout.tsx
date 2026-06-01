@@ -121,11 +121,6 @@ const organizationJsonLd = {
     { "@type": "Country", name: "Canada" },
     { "@type": "Place", name: "Worldwide" },
   ],
-  sameAs: [
-    "https://twitter.com/ugcstudio",
-    "https://instagram.com/ugcstudio",
-    "https://linkedin.com/company/ugc-studio"
-  ],
 };
 
 const websiteJsonLd = {

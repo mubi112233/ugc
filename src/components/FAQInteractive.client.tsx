@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -9,10 +10,18 @@ import {
 import { motion } from "framer-motion";
 import { HelpCircle, Shield, Zap } from "lucide-react";
 import { getCopy } from "@/lib/copy";
-import type { FAQItem } from "@/lib/api";
+import { fetchFAQ, type FAQItem } from "@/lib/api";
+import { usePathname } from "next/navigation";
 
-export function FAQInteractive({ faqs, lang }: { faqs: FAQItem[]; lang: string }) {
-  const copy = getCopy(lang, "faq");
+export function FAQInteractive({ lang }: { lang: string }) {
+  const [faqs, setFaqs] = useState<FAQItem[]>([]);
+  const pathname = usePathname();
+  const currentLang = pathname.startsWith('/ge') || pathname.startsWith('/de') ? 'ge' : 'en';
+  const copy = getCopy(currentLang, "faq");
+
+  useEffect(() => {
+    fetchFAQ(currentLang).then(data => setFaqs(data?.faqs || []));
+  }, [currentLang]);
 
   return (
     <section

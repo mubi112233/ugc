@@ -1,10 +1,15 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { getCopy } from "@/lib/copy";
 import { SPACING } from "@/lib/constants";
 import { localizedPath, siteConfig, localeUrlPrefix, type SiteLocale } from "@/lib/site-config";
-import { fetchCaseStudiesCardsData } from "@/lib/data-fetching";
+import { fetchCaseStudies, type CaseStudiesResponse } from "@/lib/api";
+import type { CaseStudyCard } from "@/lib/data-fetching";
+import { usePathname } from "next/navigation";
 
 const slugify = (title: string) =>
   title
@@ -14,10 +19,30 @@ const slugify = (title: string) =>
     .replace(/-+/g, "-")
     .trim();
 
-export async function CaseStudies({ lang }: { lang: string }) {
-  const studies = await fetchCaseStudiesCardsData(lang);
-  const copy = getCopy(lang, "caseStudies");
-  const urlSeg = localeUrlPrefix((lang === "ge" ? "ge" : "en") as SiteLocale);
+export function CaseStudies({ lang }: { lang: string }) {
+  const [studies, setStudies] = useState<CaseStudyCard[]>([]);
+  const pathname = usePathname();
+  const currentLang = pathname.startsWith('/ge') || pathname.startsWith('/de') ? 'ge' : 'en';
+  const copy = getCopy(currentLang, "caseStudies");
+  const urlSeg = localeUrlPrefix((currentLang === "ge" ? "ge" : "en") as SiteLocale);
+
+  useEffect(() => {
+    fetchCaseStudies(currentLang).then((data: CaseStudiesResponse | null) => {
+      if (!Array.isArray(data?.caseStudies)) return;
+      const mapped = (data.caseStudies as any[])
+        .map((cs) => ({
+          id: cs.caseStudyId as number,
+          title: cs.title as string,
+          company: cs.company as string,
+          industry: cs.industry as string,
+          challenge: cs.challenge as string,
+          image: cs.image as string,
+          stats: cs.stats as CaseStudyCard["stats"],
+        }))
+        .sort((a, b) => a.id - b.id);
+      setStudies(mapped);
+    });
+  }, [lang]);
 
   if (!studies.length) {
     return (
@@ -28,7 +53,7 @@ export async function CaseStudies({ lang }: { lang: string }) {
         <div className={`container mx-auto ${SPACING.container}`}>
           <div className="text-center py-20">
             <p className="text-muted-foreground mb-4">
-              {lang === "ge"
+              {currentLang === "ge"
                 ? "Keine Fallstudien verfügbar."
                 : "No case studies available."}
             </p>
@@ -115,18 +140,18 @@ export async function CaseStudies({ lang }: { lang: string }) {
 
         <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
-            {lang === "ge"
+            {currentLang === "ge"
               ? "Bereit, ähnliche Ergebnisse zu erzielen?"
               : "Ready to achieve similar results?"}
           </p>
           <Link
-            href={localizedPath((lang === "ge" ? "ge" : "en") as SiteLocale, siteConfig.routes.bookMeeting)}
+            href={localizedPath((currentLang === "ge" ? "ge" : "en") as SiteLocale, siteConfig.routes.bookMeeting)}
             className="inline-block w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-brand to-gold text-foreground font-bold text-base sm:text-lg rounded-2xl hover:from-gold hover:to-secondary transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl text-center"
           >
             <span className="hidden sm:inline">
-              {lang === "ge" ? "Kostenlose Beratung buchen" : "Book a Free Consultation"}
+              {currentLang === "ge" ? "Kostenlose Beratung buchen" : "Book a Free Consultation"}
             </span>
-            <span className="sm:hidden">{lang === "ge" ? "Jetzt starten" : "Get Started"}</span>
+            <span className="sm:hidden">{currentLang === "ge" ? "Jetzt starten" : "Get Started"}</span>
           </Link>
         </div>
       </div>

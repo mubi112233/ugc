@@ -1,14 +1,22 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-/**
- * Sets `x-html-lang` so the root `<html lang>` matches the visible locale (de for /ge, en for /en).
- * Helps German SERP snippets and screen readers.
- */
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Redirect root to /en
+  if (pathname === "/") {
+    return NextResponse.redirect(new URL("/en", request.url), 308);
+  }
+
+  // Redirect /ge/* to /de/* (canonical German path)
+  if (pathname.startsWith("/ge")) {
+    const newPath = pathname.replace(/^\/ge/, "/de");
+    return NextResponse.redirect(new URL(newPath + request.nextUrl.search, request.url), 308);
+  }
+
   const htmlLang =
-    pathname.startsWith("/ge") || pathname.startsWith("/de") ? "de" : "en";
+    pathname.startsWith("/de") ? "de" : "en";
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-html-lang", htmlLang);
   return NextResponse.next({ request: { headers: requestHeaders } });
