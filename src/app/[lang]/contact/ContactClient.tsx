@@ -186,9 +186,9 @@ export default function ContactClient({ lang }: { lang: string }) {
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const formData = new FormData();
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "8aff1902-6795-4608-ad79-be6702aa7f3a");
+    formData.append("access_key", "8aff1902-6795-4608-ad79-be6702aa7f3a");
     formData.append("to", "patryk@dononlineagency.com");
-    formData.append("subject", "New UGC inquiry - UGC Studio");
+    formData.append("subject", "New Design Project Inquiry - don-webdesign");
     formData.append("email", data.email);
     formData.append("phone", data.phone);
     formData.append("vaCount", data.vaCount);

@@ -62,16 +62,22 @@ export const Blog = () => {
         setError(null);
         const data = await fetchBlog(currentLang);
 
-        if (!data) throw new Error("Failed to fetch blogs");
+        if (!data) throw new Error("No response from API");
 
-        const fetchedBlogs = Array.isArray((data as any).blogs)
-          ? (data as any).blogs.sort(
-              (a: BlogPost, b: BlogPost) =>
-                (a.order || 0) - (b.order || 0) || a.blogId - b.blogId
-            )
+        // API returns { blogs: [...] }
+        const raw = Array.isArray(data.blogs)
+          ? data.blogs
+          : Array.isArray(data.posts)
+          ? data.posts
           : [];
 
-        console.log('Blog data:', fetchedBlogs.map((b: BlogPost) => ({ title: b.title, excerpt: b.excerpt?.substring(0, 30), content: b.content?.substring(0, 30) })));
+        if (raw.length === 0) throw new Error("Empty blogs array in response");
+
+        const fetchedBlogs = raw.sort(
+          (a: BlogPost, b: BlogPost) =>
+            (a.order || 0) - (b.order || 0) || a.blogId - b.blogId
+        );
+
         setPosts(fetchedBlogs);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to load blogs");
@@ -108,10 +114,13 @@ export const Blog = () => {
         <div className={`container mx-auto ${SPACING.container}`}>
           <div className="text-center py-20">
             <p className="text-muted-foreground">
-              {error || (currentLang === "ge"
+              {currentLang === "ge"
                 ? "Keine Blog-Artikel verfügbar."
-                : "No blog posts available.")}
+                : "No blog posts available."}
             </p>
+            {process.env.NODE_ENV !== "production" && error && (
+              <p className="text-xs text-red-400 mt-2 font-mono">{error}</p>
+            )}
           </div>
         </div>
       </motion.section>

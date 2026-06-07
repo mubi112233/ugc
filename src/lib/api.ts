@@ -310,12 +310,20 @@ export interface BlogPost {
   content: string;
   image: string;
   author: string;
-  publishedAt: string;
-  slug: string;
+  date: string;
+  readTime: string;
+  category: string;
+  publishedAt?: string;
+  slug?: string;
+  order?: number;
+  id?: number | string;
+  charts?: any;
 }
 
+// API returns { blogs: [...] } (not { posts: [...] })
 export interface BlogResponse {
-  posts: BlogPost[];
+  blogs: BlogPost[];
+  posts?: BlogPost[]; // fallback alias
 }
 
 export const fetchBlog = (lang: string = 'en') => 

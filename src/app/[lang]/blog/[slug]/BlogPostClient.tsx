@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Share2, Loader2 } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useParams } from "next/navigation";
+import { useState, useEffect } from "react";
 import { getCopy } from "@/lib/copy";
 import { SPACING } from "@/lib/constants";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { localizedPath, siteConfig, type SiteLocale } from "@/lib/site-config";
+import { fetchApiDataClient, API_ENDPOINTS, normalizeLanguage } from "@/lib/api";
 
 interface BlogPost {
   blogId?: number;
@@ -23,22 +24,61 @@ interface BlogPost {
   image: string;
 }
 
-export default function BlogPostClient({
-  post,
-  lang,
-}: {
-  post: BlogPost;
-  lang: string;
-}) {
+export default function BlogPostClient() {
   const router = useRouter();
+  const params = useParams();
+  const rawLang = (params?.lang as string) ?? "en";
+  const slug = (params?.slug as string) ?? "";
+  const lang = rawLang === "de" || rawLang === "ge" ? "ge" : "en";
+  const apiLang = normalizeLanguage(rawLang);
+
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
   const [copied, setCopied] = useState(false);
+
   const copy = getCopy(lang, "blog");
   const isGe = lang === "ge";
 
+  useEffect(() => {
+    if (!slug) return;
+
+    const postId = Number(slug.split("-").pop());
+    if (isNaN(postId)) {
+      setNotFound(true);
+      setLoading(false);
+      return;
+    }
+
+    const load = async () => {
+      try {
+        setLoading(true);
+        const data = await fetchApiDataClient<any>(API_ENDPOINTS.BLOGS, apiLang);
+        const posts: BlogPost[] = Array.isArray(data?.blogs)
+          ? data.blogs
+          : Array.isArray(data?.posts)
+          ? data.posts
+          : [];
+        const found = posts.find((p) => p.blogId === postId || (p.id !== undefined && Number(p.id) === postId));
+        if (!found) {
+          setNotFound(true);
+        } else {
+          setPost(found);
+        }
+      } catch {
+        setNotFound(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    load();
+  }, [slug, apiLang]);
+
   const handleShare = async () => {
     const shareData = {
-      title: post.title,
-      text: post.excerpt,
+      title: post?.title ?? "",
+      text: post?.excerpt ?? "",
       url: typeof window !== "undefined" ? window.location.href : "",
     };
     if (navigator.share && navigator.canShare?.(shareData)) {
@@ -58,6 +98,31 @@ export default function BlogPostClient({
     setTimeout(() => setCopied(false), 2000);
   };
 
+  if (loading) {
+    return (
+      <div className={`min-h-screen ${SPACING.sideMargin} bg-background flex items-center justify-center`}>
+        <Loader2 className="w-8 h-8 animate-spin text-gold" />
+      </div>
+    );
+  }
+
+  if (notFound || !post) {
+    return (
+      <div className={`min-h-screen ${SPACING.sideMargin} bg-background flex flex-col items-center justify-center gap-4`}>
+        <p className="text-muted-foreground text-lg">
+          {isGe ? "Beitrag nicht gefunden." : "Post not found."}
+        </p>
+        <button
+          onClick={() => router.push(`/${lang}/blog`)}
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-foreground font-semibold rounded-xl hover:bg-gold/90 transition-all"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          {isGe ? "Zurück zum Blog" : "Back to Blog"}
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className={`min-h-screen ${SPACING.sideMargin} bg-background`}>
       <motion.article
@@ -71,7 +136,7 @@ export default function BlogPostClient({
           items={[
             { label: isGe ? "Startseite" : "Home", href: `/${lang}` },
             { label: "Blog", href: `/${lang}/blog` },
-            { label: post.title, href: `/${lang}/blog/${post.title}` },
+            { label: post.title, href: `/${lang}/blog/${slug}` },
           ]}
         />
 
@@ -149,7 +214,14 @@ export default function BlogPostClient({
             className="mb-8 sm:mb-12"
           >
             <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
-              <Image src={post.image} alt={post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1024px" className="object-cover" priority />
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1024px"
+                className="object-cover"
+                priority
+              />
             </div>
           </motion.figure>
         )}
@@ -221,7 +293,9 @@ export default function BlogPostClient({
             {isGe ? "Bereit, mit UGC zu skalieren?" : "Ready to Scale with UGC?"}
           </h3>
           <p className="text-sm sm:text-base text-muted-foreground mb-6 max-w-2xl mx-auto">
-            {isGe ? "Entdecken Sie, wie User Generated Content Ihre Conversion-Rate steigern kann." : "Discover how user-generated content can boost your conversion rates."}
+            {isGe
+              ? "Entdecken Sie, wie User Generated Content Ihre Conversion-Rate steigern kann."
+              : "Discover how user-generated content can boost your conversion rates."}
           </p>
           <button
             onClick={() =>
