@@ -183,10 +183,11 @@ export default function ContactClient({ lang }: { lang: string }) {
 
   const emailPattern = useMemo(() => /[^\s@]+@[^\s@]+\.[^\s@]+/, []);
   const phonePattern = useMemo(() => /^[0-9+\-()\s]{7,20}$/i, []);
+  const web3FormsAccessKey = process.env.VITE_WEB3FORMS_ACCESS_KEY ?? "8aff1902-6795-4608-ad79-be6702aa7f3a";
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const formData = new FormData();
-    formData.append("access_key", "8aff1902-6795-4608-ad79-be6702aa7f3a");
+    formData.append("access_key", web3FormsAccessKey);
     formData.append("to", "patryk@dononlineagency.com");
     formData.append("subject", "New Design Project Inquiry - don-webdesign");
     formData.append("email", data.email);
