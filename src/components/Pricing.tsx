@@ -248,10 +248,10 @@ export const Pricing = () => {
         >
           <div className="text-center mb-3 sm:mb-4">
             <label className="block text-base sm:text-lg lg:text-xl font-bold mb-2 text-foreground">
-              {copy.videoCountLabel ?? 'How many videos do you need?'}
+              {copy.vaCountLabel ?? 'How many videos do you need?'}
             </label>
             <span className="text-xs sm:text-sm text-muted-foreground px-2">
-              {copy.videoCountHelper ?? 'Select the number of UGC videos'}
+              {copy.vaCountHelper ?? 'Select the number of UGC videos'}
             </span>
           </div>
           
